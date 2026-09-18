@@ -9,7 +9,7 @@ toc: false
 CAUSAL AI · BAYESIAN INFERENCE · AGENT-BASED MODELLING · WORLD MODELS
 :::
 
-# Building AI systems that learn and reason about causes, uncertainty, and interventions.
+# Building AI systems that learn and reason about causation with robustness and uncertainty quantification.
 
 I work on causal structure learning, causal forecasting, Bayesian uncertainty, and agent-based simulation. My research asks how AI systems can move beyond prediction toward models that explain mechanisms, support interventions, and remain useful when environments change.
 
