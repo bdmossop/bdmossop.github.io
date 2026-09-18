@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Brandon Mossop"
-  site-url: "https://brandonmossop.com"
+  site-url: "https://bdmossop.github.io"
   description: "Research in causal AI, Bayesian inference, causal discovery, forecasting, and agent-based simulation."
   favicon: assets/favicon.svg
   navbar:
