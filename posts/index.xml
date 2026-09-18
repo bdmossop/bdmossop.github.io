@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Brandon Mossop</title>
+<link>https://brandonmossop.com/posts/</link>
+<atom:link href="https://brandonmossop.com/posts/index.xml" rel="self" type="application/rss+xml"/>
+<description>Short notes on causal AI, simulation, uncertainty, and emerging research ideas.</description>
+<generator>quarto-1.10.18</generator>
+<lastBuildDate>Fri, 18 Sep 2026 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Causal AI Beyond Prediction</title>
+  <link>https://brandonmossop.com/posts/causal-ai-beyond-prediction/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Prediction asks what is likely to happen next. Causal reasoning asks a different question: what would happen if we changed something?</p>
+<p>That distinction matters whenever an AI system is used to support decisions. A model might learn that a variable is highly predictive of an outcome while remaining unable to determine whether changing that variable would alter the outcome. In many scientific, engineering, and policy settings, the second question is the one we actually care about.</p>
+<p>My research is motivated by the idea that causal structure can act as an explicit model of mechanism. A directed acyclic graph provides a compact representation of which variables directly influence others. Structural functions then describe how those influences produce outcomes.</p>
+<p>The challenge is that these structures are rarely known. They must be learned from data, supplied by experts, or inferred through a combination of statistical and contextual evidence. This makes causal discovery a critical component of causal AI.</p>
+<p>A useful causal AI system should therefore do more than recover a graph. It should represent uncertainty about that graph, connect the graph to predictive models, and support reasoning under intervention and distribution shift.</p>
+<p>This is the direction I am exploring across causal discovery, forecasting, Bayesian inference, and simulation.</p>
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>Causal AI</category>
+  <category>Causal Inference</category>
+  <guid>https://brandonmossop.com/posts/causal-ai-beyond-prediction/</guid>
+  <pubDate>Fri, 18 Sep 2026 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Can Causal Discovery Learn the Rules of an Agent-Based Model?</title>
+  <link>https://brandonmossop.com/posts/causal-abm/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Agent-based models are powerful because they can generate complex system-level behavior from relatively simple rules assigned to individual agents. Their weakness is that those rules are often manually designed.</p>
+<p>A natural alternative is to learn the rules from data.</p>
+<p>Suppose we observe a population of agents over time. For each decision, we record the agent’s state, local environment, recent history, and action. Causal discovery could first be used to identify which variables directly influence the decision. We could then estimate probabilistic structural functions over the discovered parent variables.</p>
+<p>Those functions become stochastic behavioral rules inside the simulator.</p>
+<p>The resulting model has an interesting property: uncertainty exists at multiple levels. There may be uncertainty about the causal graph, uncertainty about the structural functions, and randomness in individual decisions. Repeated simulation propagates those uncertainties into system-level outcomes.</p>
+<p>This creates a path toward a data-driven agent-based model that can be judged on two separate criteria:</p>
+<ol type="1">
+<li><strong>observational fidelity:</strong> can it reproduce the behavior seen in the data?</li>
+<li><strong>interventional validity:</strong> can it predict what happens when a policy or environmental variable is changed?</li>
+</ol>
+<p>The second criterion is especially important. A simulator that reproduces historical data but fails under intervention is of limited use for decision support.</p>
+<p>The broader research question is therefore not simply whether causal discovery can fit an ABM. It is whether causal structure can make learned agent behavior more transferable and reliable under interventions.</p>
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>Agent-Based Modelling</category>
+  <category>Causal Discovery</category>
+  <category>Simulation</category>
+  <guid>https://brandonmossop.com/posts/causal-abm/</guid>
+  <pubDate>Thu, 17 Sep 2026 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Why Policy Simulation Needs Uncertainty</title>
+  <link>https://brandonmossop.com/posts/uncertainty-policy-simulation/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Simulation is often presented as if a policy produces a single outcome. Real systems rarely behave that way.</p>
+<p>A policy simulator may contain uncertain behavioral parameters, incomplete causal structure, noisy observations, and stochastic interactions among agents. Reporting one trajectory hides these sources of uncertainty.</p>
+<p>A Bayesian treatment offers a more useful alternative. Instead of calibrating the simulator to one best-fitting parameter vector, we infer a posterior distribution over plausible parameters. We then simulate each proposed intervention across many draws from that posterior.</p>
+<p>The output is a distribution over policy outcomes.</p>
+<p>This changes the question from:</p>
+<blockquote class="blockquote">
+<p>What does the simulator predict?</p>
+</blockquote>
+<p>into:</p>
+<blockquote class="blockquote">
+<p>Across plausible models of the system, how often does this intervention produce the outcome we care about?</p>
+</blockquote>
+<p>For expensive simulators, repeatedly performing Bayesian inference can itself become the bottleneck. Amortized inference offers a possible solution by learning a reusable mapping from observed simulator behavior to an approximate posterior over latent parameters.</p>
+<p>The combination of causal structure, agent-based simulation, and amortized Bayesian inference is particularly appealing because each component addresses a different weakness: causal models provide intervention semantics, ABMs capture heterogeneous interaction, and Bayesian inference quantifies uncertainty.</p>
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>Bayesian Inference</category>
+  <category>Policy Simulation</category>
+  <category>Uncertainty</category>
+  <guid>https://brandonmossop.com/posts/uncertainty-policy-simulation/</guid>
+  <pubDate>Wed, 16 Sep 2026 04:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
