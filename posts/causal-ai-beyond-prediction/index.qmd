@@ -1,0 +1,18 @@
+---
+title: "Causal AI Beyond Prediction"
+description: "Why useful AI systems increasingly need models of intervention, not only association."
+date: 2026-09-18
+categories: [Causal AI, Causal Inference]
+---
+
+Prediction asks what is likely to happen next. Causal reasoning asks a different question: what would happen if we changed something?
+
+That distinction matters whenever an AI system is used to support decisions. A model might learn that a variable is highly predictive of an outcome while remaining unable to determine whether changing that variable would alter the outcome. In many scientific, engineering, and policy settings, the second question is the one we actually care about.
+
+My research is motivated by the idea that causal structure can act as an explicit model of mechanism. A directed acyclic graph provides a compact representation of which variables directly influence others. Structural functions then describe how those influences produce outcomes.
+
+The challenge is that these structures are rarely known. They must be learned from data, supplied by experts, or inferred through a combination of statistical and contextual evidence. This makes causal discovery a critical component of causal AI.
+
+A useful causal AI system should therefore do more than recover a graph. It should represent uncertainty about that graph, connect the graph to predictive models, and support reasoning under intervention and distribution shift.
+
+This is the direction I am exploring across causal discovery, forecasting, Bayesian inference, and simulation.

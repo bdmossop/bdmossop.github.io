@@ -1,0 +1,24 @@
+---
+title: "CV"
+toc: false
+---
+
+A concise web version of my academic CV is below. Replace the placeholder PDF link once your current CV is added to the `assets/` folder.
+
+[Download CV as PDF](assets/Brandon_Mossop_CV.pdf){.btn .btn-primary}
+
+## Research
+
+Ph.D. research in causal structure learning, causal forecasting, Bayesian modelling, and explainable AI.
+
+## Selected publications
+
+See the complete [publications page](publications.qmd).
+
+## Teaching
+
+Teaching and instructional experience in artificial intelligence, including causal inference concepts and computing coursework.
+
+## Service
+
+Add reviewing, conference service, technical program committee roles, and other academic service here.

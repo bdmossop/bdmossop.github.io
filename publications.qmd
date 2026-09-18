@@ -1,0 +1,45 @@
+---
+title: "Publications"
+description: "Selected publications and research outputs."
+---
+
+This page is intentionally easy to update. Add DOI, PDF, code, and citation links once you have the final URLs.
+
+## 2026
+
+### Improving Machine Learning Forecasting Explainability and Performance with Causal Feature Selection for Infectious Disease Spread
+
+**Brandon Mossop**, et al.  
+*INFOR: Information Systems and Operational Research*, 2026.
+
+Causal feature selection for forecasting infectious-disease spread, with emphasis on interpretability and predictive performance.
+
+[Code](https://github.com/bdmossop){.pub-link}
+
+### Regime-Aware Causal Bayesian Forecasting for Non-Stationary Time Series
+
+**Brandon Mossop**, et al.  
+*PLOS ONE*.
+
+A regime-aware forecasting method that combines temporal causal discovery, Bayesian structural models, predictive regime classification, and posterior predictive uncertainty.
+
+[Project](research.qmd#carebayes){.pub-link} [Code](https://github.com/bdmossop/CaReBayes){.pub-link}
+
+## 2025
+
+### Agent-guided Causal Discovery with a Small Language Model
+
+**Brandon Mossop**, et al.  
+*FLLM 2025*.
+
+An agent-guided framework combining conditional-independence testing, contextual orientation, edge augmentation, and critique with a small language model.
+
+## Working papers and current projects
+
+### Agentic Causal Discovery with Small Language Models Through Causal Story Reasoning
+
+Extends agentic causal discovery with explicit causal-story reasoning and evaluation on engineering datasets.
+
+### Learning Probabilistic Agent Behavior through Causal Discovery
+
+Explores causal DAG learning and probabilistic structural functions as a data-driven alternative to manually specified agent rules in agent-based models.

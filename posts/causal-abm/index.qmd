@@ -1,0 +1,25 @@
+---
+title: "Can Causal Discovery Learn the Rules of an Agent-Based Model?"
+description: "A research direction for learning probabilistic agent behavior from observational data."
+date: 2026-09-17
+categories: [Agent-Based Modelling, Causal Discovery, Simulation]
+---
+
+Agent-based models are powerful because they can generate complex system-level behavior from relatively simple rules assigned to individual agents. Their weakness is that those rules are often manually designed.
+
+A natural alternative is to learn the rules from data.
+
+Suppose we observe a population of agents over time. For each decision, we record the agent's state, local environment, recent history, and action. Causal discovery could first be used to identify which variables directly influence the decision. We could then estimate probabilistic structural functions over the discovered parent variables.
+
+Those functions become stochastic behavioral rules inside the simulator.
+
+The resulting model has an interesting property: uncertainty exists at multiple levels. There may be uncertainty about the causal graph, uncertainty about the structural functions, and randomness in individual decisions. Repeated simulation propagates those uncertainties into system-level outcomes.
+
+This creates a path toward a data-driven agent-based model that can be judged on two separate criteria:
+
+1. **observational fidelity:** can it reproduce the behavior seen in the data?
+2. **interventional validity:** can it predict what happens when a policy or environmental variable is changed?
+
+The second criterion is especially important. A simulator that reproduces historical data but fails under intervention is of limited use for decision support.
+
+The broader research question is therefore not simply whether causal discovery can fit an ABM. It is whether causal structure can make learned agent behavior more transferable and reliable under interventions.

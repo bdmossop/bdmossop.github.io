@@ -1,0 +1,60 @@
+---
+title: "Research"
+description: "Research themes and current projects."
+---
+
+My research focuses on AI systems that explicitly represent causal structure and uncertainty. I am particularly interested in settings where predictive accuracy alone is insufficient because the real question is what will happen after an intervention or when the data-generating process changes.
+
+## Causal Discovery
+
+Causal discovery aims to recover plausible causal structure from observational data. My work combines statistical discovery procedures with temporal structure, domain context, and language-model reasoning.
+
+### Agentic causal discovery
+
+I investigate multi-agent workflows in which specialized agents propose, augment, and critique causal structure. Statistical conditional-independence evidence remains central, while contextual reasoning is used to help orient or recover relationships that are difficult to identify from finite observational data alone.
+
+**Key themes:**
+
+- expert-in-the-loop causal orientation
+- small language models for contextual reasoning
+- agent-based critique and edge augmentation
+- causal story reasoning
+- evaluation using structural Hamming distance and F1
+
+## Causal Forecasting
+
+Forecasting models often perform well while leaving the data-generating mechanism implicit. My work studies whether learned causal structure can improve feature selection, robustness, interpretation, and intervention reasoning.
+
+### CaReBayes {#carebayes}
+
+**Regime-Aware Causal Bayesian Forecasting for Non-Stationary Time Series**
+
+CaReBayes models non-stationary systems as a collection of regimes with different temporal causal structures. A causal graph is estimated for each regime, Bayesian structural models are fit over the discovered parent sets, and new observations are classified according to their predictive compatibility with each regime.
+
+The broader idea is that distribution shift may sometimes reflect a change in mechanism, not merely a change in coefficients.
+
+### Causal feature selection for forecasting
+
+Another line of work studies whether causal discovery can identify compact predictor sets that improve both forecasting performance and interpretability, particularly in infectious-disease forecasting.
+
+## Causal Simulation and Agents
+
+I am increasingly interested in using causal models as the structural layer inside simulation systems.
+
+### Learning probabilistic agent behavior through causal discovery {#causal-simulation-and-agents}
+
+Rather than manually specifying every behavioral rule in an agent-based model, this project asks whether observational data can be used to learn:
+
+1. which variables directly influence an agent's decisions,
+2. probabilistic structural functions over those relationships, and
+3. uncertainty in both individual and emergent system behavior.
+
+The resulting simulator could then be evaluated not only on whether it reproduces observed data, but on whether it predicts responses to interventions.
+
+### Amortized Bayesian policy simulation
+
+A related direction uses amortized Bayesian inference to infer latent simulator parameters quickly across repeated policy scenarios. This could make uncertainty-aware simulation practical when traditional Bayesian calibration would be too expensive to repeat for every intervention.
+
+## Research philosophy
+
+I am most interested in methods that satisfy three properties at once: they should be **mechanistic enough to support intervention**, **probabilistic enough to represent uncertainty**, and **practical enough to evaluate on real systems**.

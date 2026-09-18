@@ -1,0 +1,69 @@
+---
+title: "Brandon Mossop"
+page-layout: full
+toc: false
+---
+
+::: {.hero}
+::: {.hero-kicker}
+CAUSAL AI · BAYESIAN INFERENCE · AGENT-BASED MODELLING
+:::
+
+# Building AI systems that reason about causes, uncertainty, and interventions.
+
+I work on causal structure learning, causal forecasting, Bayesian uncertainty, and agent-based simulation. My research asks how AI systems can move beyond prediction toward models that explain mechanisms, support interventions, and remain useful when environments change.
+
+[Explore my research](research.qmd){.btn .btn-primary .btn-lg} [Read research notes](posts/index.qmd){.btn .btn-outline-secondary .btn-lg}
+:::
+
+## Research areas
+
+::: {.card-grid}
+::: {.research-card}
+### Causal Discovery
+Learning causal structure from observational data, statistical tests, and contextual knowledge.
+
+[View research →](research.qmd#causal-discovery)
+:::
+
+::: {.research-card}
+### Causal Forecasting
+Using causal structure to improve forecasting robustness, interpretability, and intervention reasoning.
+
+[View research →](research.qmd#causal-forecasting)
+:::
+
+::: {.research-card}
+### Causal Simulation & Agents
+Combining causal models, Bayesian inference, and agent-based simulation for policy and complex-system analysis.
+
+[View research →](research.qmd#causal-simulation-and-agents)
+:::
+:::
+
+## Selected work
+
+### Regime-aware causal Bayesian forecasting
+A forecasting framework for non-stationary time series that combines regime-specific temporal causal discovery with Bayesian prediction and uncertainty quantification.
+
+[Project overview](research.qmd#carebayes) · [Publications](publications.qmd)
+
+### Agentic causal discovery
+Multi-agent causal discovery systems that combine statistical evidence with language-model reasoning and critique.
+
+[Project overview](research.qmd#agentic-causal-discovery)
+
+### Learning behavior for agent-based models
+An emerging research direction exploring whether causal discovery and probabilistic structural functions can learn behavioral rules for agents directly from data.
+
+[Read the research note](posts/causal-abm/index.qmd)
+
+## Current questions
+
+My current work is centered on a few practical questions:
+
+- Can causal structure make simulation models more trustworthy under interventions?
+- How should uncertainty propagate from learned causal mechanisms to system-level policy outcomes?
+- Can agents learn useful causal world models through interaction rather than passive observation alone?
+- How can small language models contribute context without replacing statistical evidence?
+

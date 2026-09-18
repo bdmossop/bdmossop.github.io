@@ -1,0 +1,39 @@
+---
+title: "About"
+---
+
+I am a researcher working at the intersection of **causal inference, machine learning, Bayesian modelling, and simulation**.
+
+My doctoral research at Queen's University focuses on learning causal structure for robust and explainable artificial intelligence. Across my work, I am interested in a recurring problem: predictive models can tell us what is associated with an outcome, but many scientific and policy questions require understanding what may happen when we actively change a system.
+
+That motivates my work on causal discovery, causal forecasting, intervention reasoning, uncertainty quantification, and agent-based modelling.
+
+## Research interests
+
+- Causal discovery and structure learning
+- Temporal causal inference
+- Bayesian inference and uncertainty quantification
+- Causal forecasting under non-stationarity
+- Agentic causal reasoning
+- Agent-based modelling and policy simulation
+- Causal digital twins
+
+## Education
+
+**Ph.D., Computing**  
+Queen's University, Kingston, Ontario
+
+**M.Sc., Computer Science, AI Specialization**  
+Lakehead University
+
+**Honours B.Sc., Computer Science**  
+Lakehead University
+
+**B.Eng., Civil Engineering**  
+Lakehead University
+
+## Elsewhere
+
+[GitHub](https://github.com/bdmossop)
+
+<!-- Add Google Scholar, ORCID, LinkedIn, and email once you decide which links you want public. -->

@@ -1,0 +1,45 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Brandon Mossop"
+  site-url: "https://brandonmossop.com"
+  description: "Research in causal AI, Bayesian inference, causal discovery, forecasting, and agent-based simulation."
+  favicon: assets/favicon.svg
+  navbar:
+    background: dark
+    left:
+      - href: index.qmd
+        text: Home
+      - href: research.qmd
+        text: Research
+      - href: publications.qmd
+        text: Publications
+      - href: posts/index.qmd
+        text: Research Notes
+      - href: about.qmd
+        text: About
+      - href: cv.qmd
+        text: CV
+    right:
+      - icon: github
+        href: https://github.com/bdmossop
+        aria-label: GitHub
+  page-footer:
+    left: "© 2026 Brandon Mossop"
+    right: "Built with Quarto"
+  search: true
+  back-to-top-navigation: true
+
+format:
+  html:
+    theme:
+      light: cosmo
+    css: styles.css
+    toc: true
+    link-external-newwindow: true
+    smooth-scroll: true
+
+execute:
+  freeze: auto

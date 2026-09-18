@@ -1,0 +1,26 @@
+---
+title: "Why Policy Simulation Needs Uncertainty"
+description: "Policy simulation should report distributions over outcomes, not only a single simulated future."
+date: 2026-09-16
+categories: [Bayesian Inference, Policy Simulation, Uncertainty]
+---
+
+Simulation is often presented as if a policy produces a single outcome. Real systems rarely behave that way.
+
+A policy simulator may contain uncertain behavioral parameters, incomplete causal structure, noisy observations, and stochastic interactions among agents. Reporting one trajectory hides these sources of uncertainty.
+
+A Bayesian treatment offers a more useful alternative. Instead of calibrating the simulator to one best-fitting parameter vector, we infer a posterior distribution over plausible parameters. We then simulate each proposed intervention across many draws from that posterior.
+
+The output is a distribution over policy outcomes.
+
+This changes the question from:
+
+> What does the simulator predict?
+
+into:
+
+> Across plausible models of the system, how often does this intervention produce the outcome we care about?
+
+For expensive simulators, repeatedly performing Bayesian inference can itself become the bottleneck. Amortized inference offers a possible solution by learning a reusable mapping from observed simulator behavior to an approximate posterior over latent parameters.
+
+The combination of causal structure, agent-based simulation, and amortized Bayesian inference is particularly appealing because each component addresses a different weakness: causal models provide intervention semantics, ABMs capture heterogeneous interaction, and Bayesian inference quantifies uncertainty.
