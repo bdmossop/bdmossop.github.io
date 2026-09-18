@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>Brandon Mossop</title>
-<link>https://bdmossop.github.io/posts/</link>
-<atom:link href="https://bdmossop.github.io/posts/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://brandonmossop.com/posts/</link>
+<atom:link href="https://brandonmossop.com/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Short notes on causal AI, simulation, uncertainty, and emerging research ideas.</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Fri, 18 Sep 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 18 Sep 2026 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Causal AI Beyond Prediction</title>
-  <link>https://bdmossop.github.io/posts/causal-ai-beyond-prediction/</link>
+  <link>https://brandonmossop.com/posts/causal-ai-beyond-prediction/</link>
   <description><![CDATA[ 
 
 
@@ -31,12 +31,12 @@
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Causal AI</category>
   <category>Causal Inference</category>
-  <guid>https://bdmossop.github.io/posts/causal-ai-beyond-prediction/</guid>
-  <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
+  <guid>https://brandonmossop.com/posts/causal-ai-beyond-prediction/</guid>
+  <pubDate>Fri, 18 Sep 2026 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Can Causal Discovery Learn the Rules of an Agent-Based Model?</title>
-  <link>https://bdmossop.github.io/posts/causal-abm/</link>
+  <link>https://brandonmossop.com/posts/causal-abm/</link>
   <description><![CDATA[ 
 
 
@@ -61,12 +61,12 @@
   <category>Agent-Based Modelling</category>
   <category>Causal Discovery</category>
   <category>Simulation</category>
-  <guid>https://bdmossop.github.io/posts/causal-abm/</guid>
-  <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
+  <guid>https://brandonmossop.com/posts/causal-abm/</guid>
+  <pubDate>Thu, 17 Sep 2026 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Why Policy Simulation Needs Uncertainty</title>
-  <link>https://bdmossop.github.io/posts/uncertainty-policy-simulation/</link>
+  <link>https://brandonmossop.com/posts/uncertainty-policy-simulation/</link>
   <description><![CDATA[ 
 
 
@@ -93,8 +93,8 @@
   <category>Bayesian Inference</category>
   <category>Policy Simulation</category>
   <category>Uncertainty</category>
-  <guid>https://bdmossop.github.io/posts/uncertainty-policy-simulation/</guid>
-  <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
+  <guid>https://brandonmossop.com/posts/uncertainty-policy-simulation/</guid>
+  <pubDate>Wed, 16 Sep 2026 04:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
