@@ -79,28 +79,28 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Brandon Mossop",
+    "title": "Building AI systems that understand causes, predict change, and reason under uncertainty",
     "section": "",
-    "text": "CAUSAL AI · BAYESIAN INFERENCE · AGENT-BASED MODELLING · WORLD MODELS\n\n\n\nI work on causal structure learning, causal forecasting, Bayesian uncertainty, and agent-based simulation. My research asks how AI systems can move beyond prediction toward models that explain mechanisms, support interventions, and remain useful when environments change.\nExplore my research Read research notes"
+    "text": "I build causal AI systems that combine causal discovery, forecasting, Bayesian inference, and agent-based simulation. The goal is to move beyond prediction toward models that explain why outcomes occur, estimate the effects of interventions, quantify uncertainty, and remain reliable as conditions change.\nExplore my research Read research notes"
   },
   {
     "objectID": "index.html#research-areas",
     "href": "index.html#research-areas",
-    "title": "Brandon Mossop",
+    "title": "Building AI systems that understand causes, predict change, and reason under uncertainty",
     "section": "Research areas",
     "text": "Research areas\n\n\nCausal Discovery\nLearning causal structure from observational data, statistical tests, and contextual knowledge.\nView research →\n\n\nCausal Forecasting\nUsing causal structure to improve forecasting robustness, interpretability, and intervention reasoning.\nView research →\n\n\nCausal Simulation & Agents\nCombining causal models, Bayesian inference, and agent-based simulation for policy and complex-system analysis.\nView research →"
   },
   {
     "objectID": "index.html#selected-work",
     "href": "index.html#selected-work",
-    "title": "Brandon Mossop",
+    "title": "Building AI systems that understand causes, predict change, and reason under uncertainty",
     "section": "Selected work",
     "text": "Selected work\n\nRegime-aware causal Bayesian forecasting\nA forecasting framework for non-stationary time series that combines regime-specific temporal causal discovery with Bayesian prediction and uncertainty quantification.\nProject overview · Publications\n\n\nAgentic causal discovery\nMulti-agent causal discovery systems that combine statistical evidence with language-model reasoning and critique.\nProject overview\n\n\nLearning behavior for agent-based models\nAn emerging research direction exploring whether causal discovery and probabilistic structural functions can learn behavioral rules for agents directly from data.\nRead the research note"
   },
   {
     "objectID": "index.html#current-questions",
     "href": "index.html#current-questions",
-    "title": "Brandon Mossop",
+    "title": "Building AI systems that understand causes, predict change, and reason under uncertainty",
     "section": "Current questions",
     "text": "Current questions\nMy current work is centered on a few practical questions:\n\nCan causal structure make simulation models more trustworthy under interventions?\nHow should uncertainty propagate from learned causal mechanisms to system-level policy outcomes?\nCan agents learn useful causal world models through interaction rather than passive observation alone?\nHow can small language models contribute context without replacing statistical evidence?"
   },
