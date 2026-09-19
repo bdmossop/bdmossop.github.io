@@ -1,17 +1,17 @@
 ---
-title: "Brandon Mossop"
 page-layout: full
 toc: false
+title-block-banner: false
 ---
 
 ::: {.hero}
-::: {.hero-kicker}
-CAUSAL AI · BAYESIAN INFERENCE · AGENT-BASED MODELLING · WORLD MODELS
-:::
 
-# Building AI systems that learn and reason about causation with robustness and uncertainty quantification.
+![](assets/brandon-banner.png){.hero-logo}
 
-I work on causal structure learning, causal forecasting, Bayesian uncertainty, and agent-based simulation. My research asks how AI systems can move beyond prediction toward models that explain mechanisms, support interventions, and remain useful when environments change.
+
+# Building AI systems that understand causes, predict change, and reason under uncertainty
+
+I build causal AI systems that combine causal discovery, forecasting, Bayesian inference, and agent-based simulation. The goal is to move beyond prediction toward models that explain why outcomes occur, estimate the effects of interventions, quantify uncertainty, and remain reliable as conditions change.
 
 [Explore my research](research.qmd){.btn .btn-primary .btn-lg} [Read research notes](posts/index.qmd){.btn .btn-outline-secondary .btn-lg}
 :::
