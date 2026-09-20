@@ -3,7 +3,7 @@ title: "CV"
 toc: false
 ---
 
-A concise web version of my academic CV is below. Replace the placeholder PDF link once your current CV is added to the `assets/` folder.
+A concise web version of my academic CV is below. 
 
 [Download CV as PDF](assets/Brandon_Mossop_CV.pdf){.btn .btn-primary}
 
@@ -19,6 +19,20 @@ See the complete [publications page](publications.qmd).
 
 Teaching and instructional experience in artificial intelligence, including causal inference concepts and computing coursework.
 
-## Service
+
+## Service & Community Engagement
+
+- **Technical Program Committee (TPC), [4th International Conference on Foundation and Large Language Models (FLLM 2026)](https://fllm-conference.org/2026/index.php){target="_blank"}** (2026)
+  - Reviewed and evaluated submitted research papers
+  - Contributed to the technical program and peer-review process
+
+- **Reviewer, *Information Processing & Management*** (2026)
+
+- **Reviewer, *INFOR: Information Systems and Operational Research*** (2026)
+
+- **Ph.D.-Community Initiative, Queen’s University** (2023–2024)
+  - Collaborated with an interdisciplinary team and KFL&A Public Health to develop organizational guidance for the responsible use of generative AI
+  - Contributed to recommendations for the practical, ethical, and responsible adoption of generative AI within the organization
+
 
 Add reviewing, conference service, technical program committee roles, and other academic service here.
