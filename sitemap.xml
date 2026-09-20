@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://brandonmossop.com/posts/distribution-shifts/index.html</loc>
-    <lastmod>2026-09-20T17:31:37.158Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brandonmossop.com/posts/uncertainty-policy-simulation/index.html</loc>
-    <lastmod>2026-09-20T17:31:37.158Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brandonmossop.com/posts/index.html</loc>
-    <lastmod>2026-09-20T17:31:37.158Z</lastmod>
-  </url>
-  <url>
     <loc>https://brandonmossop.com/cv.html</loc>
-    <lastmod>2026-09-20T17:31:37.156Z</lastmod>
+    <lastmod>2026-09-20T17:33:11.000Z</lastmod>
   </url>
   <url>
     <loc>https://brandonmossop.com/publications.html</loc>
-    <lastmod>2026-09-20T17:31:37.158Z</lastmod>
+    <lastmod>2026-09-20T17:33:10.304Z</lastmod>
   </url>
   <url>
-    <loc>https://brandonmossop.com/index.html</loc>
-    <lastmod>2026-09-20T17:31:37.156Z</lastmod>
+    <loc>https://brandonmossop.com/posts/uncertainty-policy-simulation/index.html</loc>
+    <lastmod>2026-09-20T17:33:09.512Z</lastmod>
   </url>
   <url>
-    <loc>https://brandonmossop.com/research.html</loc>
-    <lastmod>2026-09-20T17:31:37.158Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brandonmossop.com/about.html</loc>
-    <lastmod>2026-09-20T17:31:37.156Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brandonmossop.com/posts/causal-abm/index.html</loc>
-    <lastmod>2026-09-20T17:31:37.158Z</lastmod>
+    <loc>https://brandonmossop.com/posts/index.html</loc>
+    <lastmod>2026-09-20T17:33:07.271Z</lastmod>
   </url>
   <url>
     <loc>https://brandonmossop.com/posts/causal-ai-beyond-prediction/index.html</loc>
-    <lastmod>2026-09-20T17:31:37.158Z</lastmod>
+    <lastmod>2026-09-20T17:33:06.119Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brandonmossop.com/research.html</loc>
+    <lastmod>2026-09-20T17:33:05.693Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brandonmossop.com/posts/causal-abm/index.html</loc>
+    <lastmod>2026-09-20T17:33:06.511Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brandonmossop.com/posts/distribution-shifts/index.html</loc>
+    <lastmod>2026-09-20T17:33:09.143Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brandonmossop.com/index.html</loc>
+    <lastmod>2026-09-20T17:33:09.906Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brandonmossop.com/about.html</loc>
+    <lastmod>2026-09-20T17:33:10.670Z</lastmod>
   </url>
 </urlset>
