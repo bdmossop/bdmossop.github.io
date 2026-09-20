@@ -2,6 +2,7 @@
   {
     "listing": "/posts/index.html",
     "items": [
+      "/posts/distribution-shifts/index.html",
       "/posts/causal-ai-beyond-prediction/index.html",
       "/posts/causal-abm/index.html",
       "/posts/uncertainty-policy-simulation/index.html"

@@ -6,15 +6,660 @@
       version="2.0">
 <channel>
 <title>Brandon Mossop</title>
-<link>https://brandonmossop.com/posts/index.html</link>
+<link>https://brandonmossop.com/posts/</link>
 <atom:link href="https://brandonmossop.com/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Short notes on causal AI, simulation, uncertainty, and emerging research ideas.</description>
-<generator>quarto-1.3.450</generator>
-<lastBuildDate>Fri, 18 Sep 2026 04:00:00 GMT</lastBuildDate>
+<generator>quarto-1.10.18</generator>
+<lastBuildDate>Sun, 20 Sep 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Why Causal Structure Can Be More Robust to Distribution Shift</title>
+  <dc:creator>Brandon Mossop</dc:creator>
+  <link>https://brandonmossop.com/posts/distribution-shifts/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Prediction works well when the future looks like the past. But what happens when the distribution of a variable changes?</p>
+<p>In this small experiment, I construct a synthetic causal system and compare three linear regression models:</p>
+<ol type="1">
+<li>A model using only the direct causes of the outcome.</li>
+<li>A model using most observed predictors while excluding a downstream effect of the outcome.</li>
+<li>A model using all observed predictors.</li>
+</ol>
+<p>I then introduce a distribution shifts in a variable that is not direct causes of the outcome and examine how prediction error changes.</p>
+<p>The point is not that causal features will always give the lowest prediction error. In fact, a model that uses additional correlated variables can perform better when the test environment closely resembles the training environment. Instead, this experiment illustrates why features tied to the causal mechanism generating the target can be more stable when other parts of the data distribution change.</p>
+<section id="simulating-the-causal-system" class="level2">
+<h2 class="anchored" data-anchor-id="simulating-the-causal-system">Simulating the causal system</h2>
+<p>The synthetic system contains six observed predictors, <img src="https://latex.codecogs.com/png.latex?X_0"> through <img src="https://latex.codecogs.com/png.latex?X_5">, and an outcome <img src="https://latex.codecogs.com/png.latex?Y">.</p>
+<p>The relevant causal relationships are:</p>
+<br>
+
+<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Baligned%7D%0AX_1%20&amp;%5Crightarrow%20X_0%20%5Cleftarrow%20X_5%20%5C%5C%0AX_0%20&amp;%5Crightarrow%20X_2%20%5C%5C%0AX_0%20&amp;%5Crightarrow%20Y%20%5Cleftarrow%20X_5%20%5C%5C%0AY%20&amp;%5Crightarrow%20X_3%0A%5Cend%7Baligned%7D">
+<p><br>
+</p>
+<p>Here, <img src="https://latex.codecogs.com/png.latex?X_0"> and <img src="https://latex.codecogs.com/png.latex?X_5"> are the direct causes, or causal parents, of <img src="https://latex.codecogs.com/png.latex?Y">. <img src="https://latex.codecogs.com/png.latex?X_3"> is a downstream effect of the target <img src="https://latex.codecogs.com/png.latex?Y">, <img src="https://latex.codecogs.com/png.latex?X_2"> is caused by <img src="https://latex.codecogs.com/png.latex?X_0">, and <img src="https://latex.codecogs.com/png.latex?X_4"> is unrelated to the target in the data-generating process.</p>
+<div class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Show simulation code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.linear_model <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> LinearRegression</span>
+<span id="cb1-6"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.metrics <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> root_mean_squared_error</span>
+<span id="cb1-7"></span>
+<span id="cb1-8">np.random.seed(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>)</span>
+<span id="cb1-9"></span>
+<span id="cb1-10">D <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000</span></span>
+<span id="cb1-11">var_names <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X0"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X1"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X2"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X3"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X4"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X5"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Y"</span>]</span>
+<span id="cb1-12"></span>
+<span id="cb1-13">data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.randn(D, <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(var_names))</span>
+<span id="cb1-14"></span>
+<span id="cb1-15"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> d <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(D):</span>
+<span id="cb1-16"></span>
+<span id="cb1-17">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># X1, X4, and X5 are root variables.</span></span>
+<span id="cb1-18"></span>
+<span id="cb1-19">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># X0 is caused by X1 and X5.</span></span>
+<span id="cb1-20">    data[d, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.1</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> data[d, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> data[d, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>]</span>
+<span id="cb1-21"></span>
+<span id="cb1-22">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># X2 is caused by X0.</span></span>
+<span id="cb1-23">    data[d, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.1</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> data[d, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span>
+<span id="cb1-24"></span>
+<span id="cb1-25">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Y is caused directly by X0 and X5.</span></span>
+<span id="cb1-26">    data[d, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.1</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> data[d, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.6</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> data[d, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>]</span>
+<span id="cb1-27"></span>
+<span id="cb1-28">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># X3 is caused by Y.</span></span>
+<span id="cb1-29">    data[d, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.9</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> data[d, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>]</span>
+<span id="cb1-30"></span>
+<span id="cb1-31">df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame(data, columns<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>var_names)</span>
+<span id="cb1-32"></span>
+<span id="cb1-33">df.head()</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">X0</th>
+<th data-quarto-table-cell-role="th">X1</th>
+<th data-quarto-table-cell-role="th">X2</th>
+<th data-quarto-table-cell-role="th">X3</th>
+<th data-quarto-table-cell-role="th">X4</th>
+<th data-quarto-table-cell-role="th">X5</th>
+<th data-quarto-table-cell-role="th">Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>-1.458388</td>
+<td>0.342680</td>
+<td>1.007197</td>
+<td>0.093049</td>
+<td>0.981321</td>
+<td>0.514219</td>
+<td>0.383872</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>-1.380790</td>
+<td>-0.189496</td>
+<td>0.116922</td>
+<td>-0.162277</td>
+<td>0.435163</td>
+<td>-0.583595</td>
+<td>0.328611</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>0.103121</td>
+<td>-0.104411</td>
+<td>-0.520968</td>
+<td>1.892205</td>
+<td>-0.438136</td>
+<td>-1.118318</td>
+<td>0.958303</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>1.881917</td>
+<td>-0.251879</td>
+<td>-0.654244</td>
+<td>1.974032</td>
+<td>0.937082</td>
+<td>0.731000</td>
+<td>1.988348</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>0.087557</td>
+<td>0.055676</td>
+<td>0.231155</td>
+<td>-0.319051</td>
+<td>-0.756352</td>
+<td>0.816454</td>
+<td>1.249073</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="train-and-test-split" class="level2">
+<h2 class="anchored" data-anchor-id="train-and-test-split">Train and test split</h2>
+<p>The first 600 observations are used for training and the remaining 400 are held out for testing.</p>
+<div class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Show train-test split</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">train <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df.iloc[:<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">600</span>].copy()</span>
+<span id="cb2-2">test <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df.iloc[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">600</span>:].copy()</span>
+<span id="cb2-3"></span>
+<span id="cb2-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Training observations: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(train)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb2-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Test observations: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(test)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Training observations: 600
+Test observations: 400</code></pre>
+</div>
+</div>
+<p>Keeping the two sets separate is important because the goal is to evaluate how the trained models behave on genuinely unseen observations.</p>
+</section>
+<section id="comparing-three-predictive-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-three-predictive-strategies">Comparing three predictive strategies</h2>
+<p>I compare three feature sets.</p>
+<p>The <strong>causal parents</strong> model uses only the variables that directly generate <img src="https://latex.codecogs.com/png.latex?Y">: <img src="https://latex.codecogs.com/png.latex?X_0"> and <img src="https://latex.codecogs.com/png.latex?X_5"></p>
+<p>The <strong>all except X3</strong> model uses all observed predictors except <img src="https://latex.codecogs.com/png.latex?X_3">, the downstream effect of <img src="https://latex.codecogs.com/png.latex?Y">.</p>
+<p>The <strong>all predictors</strong> model uses every available predictor, including <img src="https://latex.codecogs.com/png.latex?X_3">.</p>
+<div class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Show model definitions</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">feature_sets <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb4-2">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Causal parents"</span>: [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X0"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X5"</span>],</span>
+<span id="cb4-3">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"All except X3"</span>: [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X0"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X1"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X2"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X4"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X5"</span>],</span>
+<span id="cb4-4">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"All predictors"</span>: [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X0"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X1"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X2"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X3"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X4"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X5"</span>],</span>
+<span id="cb4-5">}</span>
+<span id="cb4-6"></span>
+<span id="cb4-7">models <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {}</span>
+<span id="cb4-8"></span>
+<span id="cb4-9"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> name, features <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> feature_sets.items():</span>
+<span id="cb4-10">    model <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> LinearRegression()</span>
+<span id="cb4-11">    model.fit(train[features], train[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Y"</span>])</span>
+<span id="cb4-12">    models[name] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> model</span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="performance-before-distribution-shift" class="level2">
+<h2 class="anchored" data-anchor-id="performance-before-distribution-shift">Performance before distribution shift</h2>
+<p>First, the three trained models are evaluated on the original test distribution.</p>
+<div class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Show evaluation code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> evaluate_models(test_data):</span>
+<span id="cb5-2">    scores <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {}</span>
+<span id="cb5-3"></span>
+<span id="cb5-4">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> name, features <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> feature_sets.items():</span>
+<span id="cb5-5">        predictions <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> models[name].predict(test_data[features])</span>
+<span id="cb5-6">        scores[name] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> root_mean_squared_error(</span>
+<span id="cb5-7">            test_data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Y"</span>],</span>
+<span id="cb5-8">            predictions</span>
+<span id="cb5-9">        )</span>
+<span id="cb5-10"></span>
+<span id="cb5-11">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> scores</span>
+<span id="cb5-12"></span>
+<span id="cb5-13"></span>
+<span id="cb5-14">baseline_scores <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> evaluate_models(test)</span>
+<span id="cb5-15"></span>
+<span id="cb5-16">baseline_results <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame(</span>
+<span id="cb5-17">    {</span>
+<span id="cb5-18">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Model"</span>: baseline_scores.keys(),</span>
+<span id="cb5-19">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"RMSE"</span>: baseline_scores.values(),</span>
+<span id="cb5-20">    }</span>
+<span id="cb5-21">)</span>
+<span id="cb5-22"></span>
+<span id="cb5-23">baseline_results[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"RMSE"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> baseline_results[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"RMSE"</span>].<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">round</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb5-24"></span>
+<span id="cb5-25">baseline_results</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Model</th>
+<th data-quarto-table-cell-role="th">RMSE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Causal parents</td>
+<td>1.036</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>All except X3</td>
+<td>1.037</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>All predictors</td>
+<td>0.769</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>The model using all predictors can perform best before the distribution changes. This is not surprising since <img src="https://latex.codecogs.com/png.latex?X_3"> is strongly associated with <img src="https://latex.codecogs.com/png.latex?Y"> because it is generated from <img src="https://latex.codecogs.com/png.latex?Y">. Although <img src="https://latex.codecogs.com/png.latex?X_3"> is not a cause of the outcome, it contains useful predictive information in the original environment.</p>
+<p>This highlights an important distinction:</p>
+<blockquote class="blockquote">
+<p>Predictive usefulness does not necessarily imply causal relevance.</p>
+</blockquote>
+<p>A variable can be highly informative for prediction while still providing a fragile basis for prediction if its distribution changes.</p>
+</section>
+<section id="shifting-the-distribution-of-x_3" class="level2">
+<h2 class="anchored" data-anchor-id="shifting-the-distribution-of-x_3">Shifting the distribution of <img src="https://latex.codecogs.com/png.latex?X_3"></h2>
+<p>Now suppose the model is deployed in a new environment where the observed distribution of <img src="https://latex.codecogs.com/png.latex?X_3"> changes.</p>
+<p>I simulate this by adding 5 to every test observation of <img src="https://latex.codecogs.com/png.latex?X_3">.</p>
+<div class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Show X3 distribution shift</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">test_shift_x3 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> test.copy()</span>
+<span id="cb6-2">test_shift_x3[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X3"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span></span>
+<span id="cb6-3"></span>
+<span id="cb6-4">shift_x3_scores <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> evaluate_models(test_shift_x3)</span>
+<span id="cb6-5"></span>
+<span id="cb6-6">shift_x3_results <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame(</span>
+<span id="cb6-7">    {</span>
+<span id="cb6-8">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Model"</span>: shift_x3_scores.keys(),</span>
+<span id="cb6-9">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"RMSE"</span>: shift_x3_scores.values(),</span>
+<span id="cb6-10">    }</span>
+<span id="cb6-11">)</span>
+<span id="cb6-12"></span>
+<span id="cb6-13">shift_x3_results[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"RMSE"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> shift_x3_results[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"RMSE"</span>].<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">round</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb6-14"></span>
+<span id="cb6-15">shift_x3_results</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Model</th>
+<th data-quarto-table-cell-role="th">RMSE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Causal parents</td>
+<td>1.036</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>All except X3</td>
+<td>1.037</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>All predictors</td>
+<td>2.570</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>The outcome <img src="https://latex.codecogs.com/png.latex?Y"> itself has not been changed, and neither has its structural mechanism. Only the observed distribution of <img src="https://latex.codecogs.com/png.latex?X_3"> has shifted.</p>
+<p>The causal model is therefore unaffected because it does not use <img src="https://latex.codecogs.com/png.latex?X_3">.</p>
+<p>The full predictive model, however, can experience a substantial increase in error because it learned to rely on the relationship between <img src="https://latex.codecogs.com/png.latex?X_3"> and <img src="https://latex.codecogs.com/png.latex?Y"> observed during training.</p>
+</section>
+<section id="why-does-this-happen" class="level2">
+<h2 class="anchored" data-anchor-id="why-does-this-happen">Why does this happen?</h2>
+<p>The outcome is generated according to the structural equation:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bequation%7D%0AY%20=%200.1X_0%20+%200.6X_5%20+%20%5Cepsilon_Y%0A%5Cend%7Bequation%7D"></p>
+<p>The mechanism determining <img src="https://latex.codecogs.com/png.latex?Y"> therefore depends directly on <img src="https://latex.codecogs.com/png.latex?X_0"> and <img src="https://latex.codecogs.com/png.latex?X_5">.</p>
+<p>The causal model is restricted to variables that participate directly in this data-generating mechanism.</p>
+<p>The full predictive model solves a different problem. It asks which observed variables are most useful for predicting <img src="https://latex.codecogs.com/png.latex?Y"> in the training distribution.</p>
+<p>Because <img src="https://latex.codecogs.com/png.latex?X_3"> is strongly associated with <img src="https://latex.codecogs.com/png.latex?Y">, the model can use it even though the direction of causation is:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bequation%7D%0AY%20%5Crightarrow%20X_3%0A%5Cend%7Bequation%7D"></p>
+<p>This works well while the statistical relationship observed during training remains stable. If the distribution of <img src="https://latex.codecogs.com/png.latex?X_3"> changes independently of the mechanism generating <img src="https://latex.codecogs.com/png.latex?Y">, that learned predictive relationship becomes unreliable.</p>
+</section>
+<section id="causal-does-not-automatically-mean-more-accurate" class="level2">
+<h2 class="anchored" data-anchor-id="causal-does-not-automatically-mean-more-accurate">Causal does not automatically mean more accurate</h2>
+<p>It is important not to overstate the result.</p>
+<p>The causal model is not necessarily the most accurate predictor in the original environment.</p>
+<p>A purely predictive model can exploit any statistical relationship that improves prediction, including downstream variables and other correlates. If those relationships remain stable at deployment, using them can be beneficial.</p>
+<p>The potential advantage of causal feature selection is different. It may provide greater stability when non-causal associations change while the target-generating mechanism remains stable.</p>
+<p>This can matter when models are deployed across:</p>
+<ul>
+<li>different populations,</li>
+<li>changing economic conditions,</li>
+<li>policy environments,</li>
+<li>different institutions,</li>
+<li>geographic regions,</li>
+<li>changing measurement systems, or</li>
+<li>different periods of time.</li>
+</ul>
+<p>In such settings, the variables that were most predictive historically are not necessarily the variables that will remain most reliable.</p>
+</section>
+<section id="what-this-experiment-does-not-show" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-experiment-does-not-show">What this experiment does not show</h2>
+<p>This is deliberately a small synthetic example.</p>
+<p>The causal structure is known in advance, the structural relationships are linear, and the distribution shifts are introduced manually. In real applications, the causal graph usually has to be learned from data, elicited from domain knowledge, or estimated using a combination of both.</p>
+<p>Causal mechanisms can also change.</p>
+<p>If the mechanism relating <img src="https://latex.codecogs.com/png.latex?X_0"> or <img src="https://latex.codecogs.com/png.latex?X_5"> to <img src="https://latex.codecogs.com/png.latex?Y"> changed, the causal model in this example could degrade as well.</p>
+<p>The more precise conclusion is therefore:</p>
+<blockquote class="blockquote">
+<p>When the causal mechanism generating the target remains stable, models that rely on its direct causes can be less sensitive to shifts in non-causal predictors.</p>
+</blockquote>
+<p>That is narrower than saying causal models are always robust, but it captures the useful idea demonstrated by the experiment.</p>
+</section>
+<section id="takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
+<p>This small experiment shows why causal structure can matter even when the final objective is prediction.</p>
+<p>A model using all available information can perform better when the deployment environment closely resembles the training environment. But part of that advantage may come from exploiting associations that are <strong>fragile</strong> under environmental change.</p>
+<p>A model using direct causes may sacrifice some initial predictive accuracy while remaining more stable when non-causal predictors shift.</p>
+<p>This is one motivation for combining causal discovery with machine learning: not simply to improve prediction on familiar data, but to identify relationships that may remain meaningful when the environment changes.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>Causal AI</category>
+  <category>Machine Learning</category>
+  <category>Code</category>
+  <category>Research Notes</category>
+  <guid>https://brandonmossop.com/posts/distribution-shifts/</guid>
+  <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Causal AI Beyond Prediction</title>
-  <link>https://brandonmossop.com/posts/causal-ai-beyond-prediction/index.html</link>
+  <link>https://brandonmossop.com/posts/causal-ai-beyond-prediction/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -30,13 +675,14 @@
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Causal AI</category>
   <category>Causal Inference</category>
-  <guid>https://brandonmossop.com/posts/causal-ai-beyond-prediction/index.html</guid>
-  <pubDate>Fri, 18 Sep 2026 04:00:00 GMT</pubDate>
+  <guid>https://brandonmossop.com/posts/causal-ai-beyond-prediction/</guid>
+  <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Can Causal Discovery Learn the Rules of an Agent-Based Model?</title>
-  <link>https://brandonmossop.com/posts/causal-abm/index.html</link>
+  <link>https://brandonmossop.com/posts/causal-abm/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -59,13 +705,14 @@
   <category>Agent-Based Modelling</category>
   <category>Causal Discovery</category>
   <category>Simulation</category>
-  <guid>https://brandonmossop.com/posts/causal-abm/index.html</guid>
-  <pubDate>Thu, 17 Sep 2026 04:00:00 GMT</pubDate>
+  <guid>https://brandonmossop.com/posts/causal-abm/</guid>
+  <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Why Policy Simulation Needs Uncertainty</title>
-  <link>https://brandonmossop.com/posts/uncertainty-policy-simulation/index.html</link>
+  <link>https://brandonmossop.com/posts/uncertainty-policy-simulation/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -90,8 +737,8 @@
   <category>Bayesian Inference</category>
   <category>Policy Simulation</category>
   <category>Uncertainty</category>
-  <guid>https://brandonmossop.com/posts/uncertainty-policy-simulation/index.html</guid>
-  <pubDate>Wed, 16 Sep 2026 04:00:00 GMT</pubDate>
+  <guid>https://brandonmossop.com/posts/uncertainty-policy-simulation/</guid>
+  <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
