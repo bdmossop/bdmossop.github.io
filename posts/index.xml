@@ -10,7 +10,7 @@
 <atom:link href="https://brandonmossop.com/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Short notes on causal AI, simulation, uncertainty, and emerging research ideas.</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Sun, 20 Sep 2026 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 20 Sep 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Why Causal Structure Can Be More Robust to Distribution Shift</title>
   <dc:creator>Brandon Mossop</dc:creator>
@@ -653,7 +653,7 @@ font-style: inherit;">3</span>)</span>
   <category>Code</category>
   <category>Research Notes</category>
   <guid>https://brandonmossop.com/posts/distribution-shifts/</guid>
-  <pubDate>Sun, 20 Sep 2026 04:00:00 GMT</pubDate>
+  <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Causal AI Beyond Prediction</title>
@@ -676,7 +676,7 @@ font-style: inherit;">3</span>)</span>
   <category>Causal AI</category>
   <category>Causal Inference</category>
   <guid>https://brandonmossop.com/posts/causal-ai-beyond-prediction/</guid>
-  <pubDate>Fri, 18 Sep 2026 04:00:00 GMT</pubDate>
+  <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Can Causal Discovery Learn the Rules of an Agent-Based Model?</title>
@@ -706,7 +706,7 @@ font-style: inherit;">3</span>)</span>
   <category>Causal Discovery</category>
   <category>Simulation</category>
   <guid>https://brandonmossop.com/posts/causal-abm/</guid>
-  <pubDate>Thu, 17 Sep 2026 04:00:00 GMT</pubDate>
+  <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Why Policy Simulation Needs Uncertainty</title>
@@ -738,7 +738,7 @@ font-style: inherit;">3</span>)</span>
   <category>Policy Simulation</category>
   <category>Uncertainty</category>
   <guid>https://brandonmossop.com/posts/uncertainty-policy-simulation/</guid>
-  <pubDate>Wed, 16 Sep 2026 04:00:00 GMT</pubDate>
+  <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
