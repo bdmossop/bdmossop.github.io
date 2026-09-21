@@ -58,7 +58,6 @@ See the complete [publications page](publications.qmd).
 
 ### Queen's University
 
-<<<<<<< HEAD
 **Teaching Assistant**, 2023-Present 
 
 - CISC 223: Software Specifications
@@ -85,8 +84,6 @@ Delivered an undergraduate guest lecture on **time series forecasting**.
 - COMP 4111: Clinical Decision Support
 - COMP 2412: Data Structures
 
-=======
->>>>>>> 0e1e5c63b410a07047576dd2ae25d4d13f102381
 
 ## Service & Community Engagement
 
@@ -102,12 +99,9 @@ Delivered an undergraduate guest lecture on **time series forecasting**.
   - Collaborated with an interdisciplinary team and KFL&A Public Health to develop organizational guidance for the responsible use of generative AI
   - Contributed to recommendations for the practical, ethical, and responsible adoption of generative AI within the organization
 
-<<<<<<< HEAD
 
 
 ## Full CV 
 
 [Download Full CV as PDF](assets/Brandon_Mossop_CV.pdf){.btn .btn-primary}
-=======
->>>>>>> 0e1e5c63b410a07047576dd2ae25d4d13f102381
 
