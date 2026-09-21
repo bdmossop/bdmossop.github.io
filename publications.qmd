@@ -1,45 +1,69 @@
 ---
 title: "Publications"
-description: "Selected publications and research outputs."
+description: "Publications and research outputs."
 ---
 
-This page is intentionally easy to update. Add DOI, PDF, code, and citation links once you have the final URLs.
+My publications span causal AI, forecasting, and machine learning.
+
+[Google Scholar →](https://scholar.google.com/citations?user=MAJ99A8AAAAJ&hl=en&oi=ao){.btn .btn-outline-primary target="_blank"}
+
+## Accepted
+
+### Causal Story-Guided Agentic Causal Discovery with Small Language Models
+
+**Brandon Mossop** and Salimur Choudhury.  
+Accepted to the **4th International Conference on Foundation and Large Language Models (FLLM 2026)**.
+
+This work extends agentic causal discovery with explicit causal-story reasoning and evaluates the approach on engineering datasets.
 
 ## 2026
 
-### Improving Machine Learning Forecasting Explainability and Performance with Causal Feature Selection for Infectious Disease Spread
+### Regime-aware causal Bayesian forecasting for non-stationary time series
 
-**Brandon Mossop**, et al.  
+**Brandon Mossop** and Salimur Choudhury.  
+*PLOS ONE*, 21(8), e0356474, 2026.
+
+A regime-aware forecasting framework that combines temporal causal discovery, Bayesian structural models, predictive regime classification, and posterior predictive uncertainty.
+
+[Read the paper →](https://doi.org/10.1371/journal.pone.0356474){.pub-link target="_blank"}  
+[Code →](https://github.com/bdmossop/CaReBayes){.pub-link target="_blank"}
+
+### Improving machine learning forecasting explainability and performance with causal feature selection for infectious disease spread
+
+**Brandon Mossop** and Salimur Choudhury.  
 *INFOR: Information Systems and Operational Research*, 2026.
 
-Causal feature selection for forecasting infectious-disease spread, with emphasis on interpretability and predictive performance.
+This work investigates causal feature selection for infectious-disease forecasting, with emphasis on interpretability and predictive performance.
 
-[Code](https://github.com/bdmossop){.pub-link}
-
-### Regime-Aware Causal Bayesian Forecasting for Non-Stationary Time Series
-
-**Brandon Mossop**, et al.  
-*PLOS ONE*.
-
-A regime-aware forecasting method that combines temporal causal discovery, Bayesian structural models, predictive regime classification, and posterior predictive uncertainty.
-
-[Project](research.qmd#carebayes){.pub-link} [Code](https://github.com/bdmossop/CaReBayes){.pub-link}
+[Read the paper →](https://doi.org/10.1080/03155986.2026.2719323){.pub-link target="_blank"}
 
 ## 2025
 
 ### Agent-guided Causal Discovery with a Small Language Model
 
-**Brandon Mossop**, et al.  
-*FLLM 2025*.
+**Brandon Mossop** and Salimur Choudhury.  
+*2025 3rd International Conference on Foundation and Large Language Models (FLLM)*, pp. 693–698, 2025.
 
-An agent-guided framework combining conditional-independence testing, contextual orientation, edge augmentation, and critique with a small language model.
+An agent-guided causal discovery framework combining conditional-independence testing, contextual orientation, edge augmentation, and critique with a small language model.
 
-## Working papers and current projects
+[Read the paper →](https://doi.org/10.1109/FLLM67465.2025.11391103){.pub-link target="_blank"}
 
-### Agentic Causal Discovery with Small Language Models Through Causal Story Reasoning
+## 2023
 
-Extends agentic causal discovery with explicit causal-story reasoning and evaluation on engineering datasets.
+### Forecasting Hospital Mental-Health Admissions with a Novel Hybrid Deep Learning Architecture
 
-### Learning Probabilistic Agent Behavior through Causal Discovery
+**Brandon Mossop**, Ramprasad Bismil, and Quazi Abidur Rahman.  
+*2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)*, pp. 4093–4100, 2023.
 
-Explores causal DAG learning and probabilistic structural functions as a data-driven alternative to manually specified agent rules in agent-based models.
+A deep-learning forecasting approach for hospital mental-health admissions using multivariate time-series data.
+
+[Read the paper →](https://doi.org/10.1109/BIBM58861.2023.10385786){.pub-link target="_blank"}
+
+### Infectious Disease Forecasting using Multivariate Incomplete Time-series: A Hybrid Architecture with Stacked Dilated Causal Convolutions
+
+**Brandon Mossop** and Quazi Abidur Rahman.  
+*2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)*, pp. 4220–4227, 2023.
+
+A hybrid deep-learning architecture for forecasting infectious-disease time series with incomplete multivariate observations.
+
+[Read the paper →](https://doi.org/10.1109/BIBM58861.2023.10385253){.pub-link target="_blank"}

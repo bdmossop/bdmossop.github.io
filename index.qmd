@@ -1,17 +1,16 @@
 ---
-title: "Brandon Mossop"
 page-layout: full
 toc: false
+title-block-banner: false
 ---
 
 ::: {.hero}
-::: {.hero-kicker}
-CAUSAL AI · BAYESIAN INFERENCE · AGENT-BASED MODELLING · WORLD MODELS
-:::
 
-# Building AI systems that learn and reason about causation with robustness and uncertainty quantification.
+![](assets/brandon-banner.png){.hero-logo}
 
-I work on causal structure learning, causal forecasting, Bayesian uncertainty, and agent-based simulation. My research asks how AI systems can move beyond prediction toward models that explain mechanisms, support interventions, and remain useful when environments change.
+# Building AI systems that learn and reason about causation 
+
+I develop **causal AI systems that learn structure, model how systems change, and reason about the consequences of interventions under uncertainty**. My work brings together causal discovery, forecasting, Bayesian inference, simulation, and agent-based modelling, with a growing focus on causal world models and physical AI.
 
 [Explore my research](research.qmd){.btn .btn-primary .btn-lg} [Read research notes](posts/index.qmd){.btn .btn-outline-secondary .btn-lg}
 :::
@@ -34,7 +33,7 @@ Using causal structure to improve forecasting robustness, interpretability, and 
 :::
 
 ::: {.research-card}
-### Causal Simulation & Agents
+### Simulation & Agents
 Combining causal models, Bayesian inference, and agent-based simulation for policy and complex-system analysis.
 
 [View research →](research.qmd#causal-simulation-and-agents)
@@ -44,26 +43,48 @@ Combining causal models, Bayesian inference, and agent-based simulation for poli
 ## Selected work
 
 ### Regime-aware causal Bayesian forecasting
-A forecasting framework for non-stationary time series that combines regime-specific temporal causal discovery with Bayesian prediction and uncertainty quantification.
 
-[Project overview](research.qmd#carebayes) · [Publications](publications.qmd)
+A forecasting framework for non-stationary time series that learns regime-specific temporal causal structure and combines it with Bayesian prediction, uncertainty quantification, and intervention reasoning.
+
+[View research →](research.qmd#carebayes) · [Read the paper →](https://doi.org/10.1371/journal.pone.0356474){target="_blank"}
+
+### Causal feature selection for infectious-disease forecasting
+
+A causal feature-selection approach for identifying compact, interpretable predictor sets that can improve machine-learning forecasting while reducing reliance on purely associational features.
+
+[View research →](research.qmd#causal-feature-selection) · [Read the paper →](https://doi.org/10.1080/03155986.2026.2719323){target="_blank"}
 
 ### Agentic causal discovery
-Multi-agent causal discovery systems that combine statistical evidence with language-model reasoning and critique.
 
-[Project overview](research.qmd#agentic-causal-discovery)
+My recent work explores causal discovery systems in which statistical evidence is complemented by small language models and specialized agents for orientation, augmentation, critique, and causal-story reasoning.
 
-### Learning behavior for agent-based models
-An emerging research direction exploring whether causal discovery and probabilistic structural functions can learn behavioral rules for agents directly from data.
+[View research →](research.qmd#agentic-causal-discovery) · [Agent-guided causal discovery, FLLM 2025 →](https://doi.org/10.1109/FLLM67465.2025.11391103){target="_blank"} · 
+[Causal story-guided discovery, FLLM 2026 →](publications.qmd#causal-story-guided-agentic-causal-discovery-with-small-language-models)
 
-[Read the research note](posts/causal-abm/index.qmd)
 
-## Current questions
+## Current research direction
 
-My current work is centered on a few practical questions:
+Much of my current work focuses on **causal AI**, particularly the intersection of causal discovery, forecasting, simulation, and decision-making.
 
-- Can causal structure make simulation models more trustworthy under interventions?
-- How should uncertainty propagate from learned causal mechanisms to system-level policy outcomes?
-- Can agents learn useful causal world models through interaction rather than passive observation alone?
-- How can small language models contribute context without replacing statistical evidence?
+I am especially interested in how these ideas can contribute to **world models** and **physical AI**. Many AI systems can be viewed as learning a policy
+
+\begin{equation}
+\pi_\theta(a_t \mid s_t),
+\end{equation}
+
+which determines what action an agent should take in its current state. World models go a step further by learning how the environment evolves under those actions,
+
+\begin{equation}
+T_\phi(s_{t+1} \mid s_t, a_t).
+\end{equation}
+
+I am particularly interested in giving these learned world models an explicitly causal representation,
+
+\begin{equation}
+T_\phi(s_{t+1} \mid s_t, \operatorname{do}(a_t)),
+\end{equation}
+
+where actions are treated as interventions on the environment. The broader goal is to develop AI systems that can reason about possible consequences before acting, while remaining robust, interpretable, and uncertainty-aware.
+
+To see more details (especially if the notation is unfamiliar) [learn more about my current research interests](research.qmd#current-research-direction).
 

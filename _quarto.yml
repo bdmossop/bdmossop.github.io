@@ -8,7 +8,7 @@ website:
   title: "Brandon Mossop"
   site-url: "https://brandonmossop.com"
   description: "Research in causal AI, Bayesian inference, causal discovery, forecasting, and agent-based simulation."
-  favicon: assets/favicon.svg
+  favicon: assets/causal-graph-icon.png
   navbar:
     background: dark
     left:
@@ -24,10 +24,31 @@ website:
         text: About
       - href: cv.qmd
         text: CV
+
     right:
+      - icon: mortarboard
+        href: https://scholar.google.com/citations?user=MAJ99A8AAAAJ&hl=en&oi=ao
+        aria-label: Google Scholar
+        target: _blank
+
+      - icon: person-badge
+        href: https://orcid.org/0009-0000-6017-8079
+        aria-label: ORCID
+        target: _blank
+
       - icon: github
         href: https://github.com/bdmossop
         aria-label: GitHub
+        target: _blank
+
+      - icon: linkedin
+        href: https://www.linkedin.com/in/brandon-mossop-1a27b799/
+        aria-label: LinkedIn
+        target: _blank
+      - icon: envelope
+        href: mailto:brandon.mossop@queensu.ca
+        aria-label: Email Brandon Mossop
+
   page-footer:
     left: "© 2026 Brandon Mossop"
     right: "Built with Quarto"

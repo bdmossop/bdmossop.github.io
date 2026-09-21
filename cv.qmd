@@ -3,22 +3,105 @@ title: "CV"
 toc: false
 ---
 
-A concise web version of my academic CV is below. Replace the placeholder PDF link once your current CV is added to the `assets/` folder.
+A concise web-based version of my academic CV is below. 
 
-[Download CV as PDF](assets/Brandon_Mossop_CV.pdf){.btn .btn-primary}
+## Profile summary
 
-## Research
+Ph.D. Candidate in Computing at Queen's University and Lead Data Scientist at Venford Technologies. My work spans causal inference, causal discovery, forecasting, Bayesian modelling, simulation, and explainable AI, with a particular focus on intervention reasoning, uncertainty quantification, and decision-making under changing conditions.
 
-Ph.D. research in causal structure learning, causal forecasting, Bayesian modelling, and explainable AI.
+## Education
 
-## Selected publications
+**Ph.D., Computing**  
+Queen's University, Kingston, Ontario, Canada  
+2022–2026
+
+**M.Sc., Computer Science, AI Specialization**  
+Lakehead University, Thunder Bay, Ontario, Canada  
+2020–2022
+
+**Honours B.Sc., Computer Science**  
+Lakehead University, Thunder Bay, Ontario, Canada  
+2017–2020
+
+**B.Eng., Civil Engineering**  
+Lakehead University, Thunder Bay, Ontario, Canada  
+2010–2014
+
+## Professional Experience
+
+### Venford Technologies
+
+**Lead Data Scientist**, 2026-Present 
+
+- Develop modelling, simulation, and machine-learning methods for decision intelligence and digital-twin applications.
+- Contribute to the core technical architecture underlying the modelling and simulation platform.
+- Implement computational approaches for scenario analysis, uncertainty quantification, policy evaluation, and complex-system decision-making.
+- Translate research ideas in probabilistic modelling, simulation, and AI into applied software solutions.
+
+[Venford Technologies →](https://venford.com/){target="_blank"}
+
+
+## Selected recent publications
+
+- **Brandon Mossop** and Salimur Choudhury. *Causal Story-Guided Agentic Causal Discovery with Small Language Models*. Accepted to the **4th International Conference on Foundation and Large Language Models**, 2026.
+
+- **Brandon Mossop** and Salimur Choudhury. [*Regime-aware causal Bayesian forecasting for non-stationary time series*](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0356474){target="_blank"}. **PLOS ONE**, 2026.
+
+- **Brandon Mossop** and Salimur Choudhury. [*Improving machine learning forecasting explainability and performance with causal feature selection for infectious disease spread*](https://www.tandfonline.com/doi/full/10.1080/03155986.2026.2719323){target="_blank"}. **INFOR: Information Systems and Operational Research**, 2026.
+
+- **Brandon Mossop** and Salimur Choudhury. [*Agent-guided Causal Discovery with a Small Language Model*](https://ieeexplore.ieee.org/abstract/document/11391103){target="_blank"}. **International Conference on Foundation and Large Language Models (FLLM 2025)**, 2025.
 
 See the complete [publications page](publications.qmd).
 
+
 ## Teaching
 
-Teaching and instructional experience in artificial intelligence, including causal inference concepts and computing coursework.
+### Queen's University
 
-## Service
+**Teaching Assistant**, 2023-Present 
 
-Add reviewing, conference service, technical program committee roles, and other academic service here.
+- CISC 223: Software Specifications
+- CISC 452: Neural and Genetic Computing
+- CISC 352: Artificial Intelligence
+- CISC 203: Discrete Structures II
+- CISC 151: Elements of Computing with Data Analytics
+
+### Trent University
+
+**Guest Lecturer**, 2024
+
+Delivered an undergraduate guest lecture on **time series forecasting**.
+
+[Lecture slides →](assets/time-series-forecasting-lecture.pdf){target="_blank"}
+
+### Lakehead University
+
+**Graduate Assistant**, 2020-2022
+
+- COMP 5421: Deep Learning
+- COMP 5012: Big Data
+- COMP 5013: Pattern Recognition
+- COMP 4111: Clinical Decision Support
+- COMP 2412: Data Structures
+
+
+## Service & Community Engagement
+
+- **Technical Program Committee (TPC), [4th International Conference on Foundation and Large Language Models (FLLM 2026)](https://fllm-conference.org/2026/index.php){target="_blank"}** (2026)
+  - Reviewed and evaluated submitted research papers
+  - Contributed to the technical program and peer-review process
+
+- **Reviewer, *Information Processing & Management*** (2026)
+
+- **Reviewer, *INFOR: Information Systems and Operational Research*** (2026)
+
+- **Ph.D.-Community Initiative, Queen’s University** (2023–2024)
+  - Collaborated with an interdisciplinary team and KFL&A Public Health to develop organizational guidance for the responsible use of generative AI
+  - Contributed to recommendations for the practical, ethical, and responsible adoption of generative AI within the organization
+
+
+
+## Full CV 
+
+[Download Full CV as PDF](assets/Brandon_Mossop_CV.pdf){.btn .btn-primary}
+

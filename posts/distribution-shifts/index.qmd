@@ -1,0 +1,273 @@
+---
+title: "Why Causal Structure Can Be More Robust to Distribution Shift"
+description: "A small simulation showing how the underlying causal structure can improve robustness when the data distribution changes."
+author: "Brandon Mossop"
+date: "2026-09-20"
+categories:
+  - Causal AI
+  - Machine Learning
+  - Code
+  - Research Notes
+jupyter: python3
+---
+
+Prediction works well when the future looks like the past. But what happens when the distribution of a variable changes?
+
+In this small experiment, I construct a synthetic causal system and compare three linear regression models:
+
+1. A model using only the direct causes of the outcome.
+2. A model using most observed predictors while excluding a downstream effect of the outcome.
+3. A model using all observed predictors.
+
+I then introduce a distribution shifts in a variable that is not direct causes of the outcome and examine how prediction error changes.
+
+The point is not that causal features will always give the lowest prediction error. In fact, a model that uses additional correlated variables can perform better when the test environment closely resembles the training environment. Instead, this experiment illustrates why features tied to the causal mechanism generating the target can be more stable when other parts of the data distribution change.
+
+## Simulating the causal system
+
+The synthetic system contains six observed predictors, $X_0$ through $X_5$, and an outcome $Y$.
+
+The relevant causal relationships are:
+
+\
+\begin{aligned}
+X_1 &\rightarrow X_0 \leftarrow X_5 \\
+X_0 &\rightarrow X_2 \\
+X_0 &\rightarrow Y \leftarrow X_5 \\
+Y &\rightarrow X_3
+\end{aligned}
+\
+
+Here, $X_0$ and $X_5$ are the direct causes, or causal parents, of $Y$. $X_3$ is a downstream effect of the target $Y$, $X_2$ is caused by $X_0$, and $X_4$ is unrelated to the target in the data-generating process.
+
+```{python}
+#| code-fold: true
+#| code-summary: "Show simulation code"
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import root_mean_squared_error
+
+np.random.seed(100)
+
+D = 1000
+var_names = ["X0", "X1", "X2", "X3", "X4", "X5", "Y"]
+
+data = np.random.randn(D, len(var_names))
+
+for d in range(D):
+
+    # X1, X4, and X5 are root variables.
+
+    # X0 is caused by X1 and X5.
+    data[d, 0] += 0.1 * data[d, 1] + 0.5 * data[d, 5]
+
+    # X2 is caused by X0.
+    data[d, 2] += 0.1 * data[d, 0]
+
+    # Y is caused directly by X0 and X5.
+    data[d, 6] += 0.1 * data[d, 0] + 0.6 * data[d, 5]
+
+    # X3 is caused by Y.
+    data[d, 3] += 0.9 * data[d, 6]
+
+df = pd.DataFrame(data, columns=var_names)
+
+df.head()
+```
+
+## Train and test split
+
+The first 600 observations are used for training and the remaining 400 are held out for testing.
+
+```{python}
+#| code-fold: true
+#| code-summary: "Show train-test split"
+
+train = df.iloc[:600].copy()
+test = df.iloc[600:].copy()
+
+print(f"Training observations: {len(train)}")
+print(f"Test observations: {len(test)}")
+```
+
+Keeping the two sets separate is important because the goal is to evaluate how the trained models behave on genuinely unseen observations.
+
+## Comparing three predictive strategies
+
+I compare three feature sets.
+
+The **causal parents** model uses only the variables that directly generate $Y$: $X_0$ and $X_5$
+
+The **all except X3** model uses all observed predictors except $X_3$, the downstream effect of $Y$.
+
+The **all predictors** model uses every available predictor, including $X_3$.
+
+```{python}
+#| code-fold: true
+#| code-summary: "Show model definitions"
+
+feature_sets = {
+    "Causal parents": ["X0", "X5"],
+    "All except X3": ["X0", "X1", "X2", "X4", "X5"],
+    "All predictors": ["X0", "X1", "X2", "X3", "X4", "X5"],
+}
+
+models = {}
+
+for name, features in feature_sets.items():
+    model = LinearRegression()
+    model.fit(train[features], train["Y"])
+    models[name] = model
+```
+
+## Performance before distribution shift
+
+First, the three trained models are evaluated on the original test distribution.
+
+```{python}
+#| code-fold: true
+#| code-summary: "Show evaluation code"
+
+def evaluate_models(test_data):
+    scores = {}
+
+    for name, features in feature_sets.items():
+        predictions = models[name].predict(test_data[features])
+        scores[name] = root_mean_squared_error(
+            test_data["Y"],
+            predictions
+        )
+
+    return scores
+
+
+baseline_scores = evaluate_models(test)
+
+baseline_results = pd.DataFrame(
+    {
+        "Model": baseline_scores.keys(),
+        "RMSE": baseline_scores.values(),
+    }
+)
+
+baseline_results["RMSE"] = baseline_results["RMSE"].round(3)
+
+baseline_results
+```
+
+The model using all predictors can perform best before the distribution changes. This is not surprising since $X_3$ is strongly associated with $Y$ because it is generated from $Y$. Although $X_3$ is not a cause of the outcome, it contains useful predictive information in the original environment.
+
+This highlights an important distinction:
+
+> Predictive usefulness does not necessarily imply causal relevance.
+
+A variable can be highly informative for prediction while still providing a fragile basis for prediction if its distribution changes.
+
+## Shifting the distribution of $X_3$
+
+Now suppose the model is deployed in a new environment where the observed distribution of $X_3$ changes.
+
+I simulate this by adding 5 to every test observation of $X_3$.
+
+```{python}
+#| code-fold: true
+#| code-summary: "Show X3 distribution shift"
+
+test_shift_x3 = test.copy()
+test_shift_x3["X3"] += 5
+
+shift_x3_scores = evaluate_models(test_shift_x3)
+
+shift_x3_results = pd.DataFrame(
+    {
+        "Model": shift_x3_scores.keys(),
+        "RMSE": shift_x3_scores.values(),
+    }
+)
+
+shift_x3_results["RMSE"] = shift_x3_results["RMSE"].round(3)
+
+shift_x3_results
+```
+
+The outcome $Y$ itself has not been changed, and neither has its structural mechanism. Only the observed distribution of $X_3$ has shifted.
+
+The causal model is therefore unaffected because it does not use $X_3$.
+
+The full predictive model, however, can experience a substantial increase in error because it learned to rely on the relationship between $X_3$ and $Y$ observed during training.
+
+
+## Why does this happen?
+
+The outcome is generated according to the structural equation:
+
+\begin{equation} 
+Y = 0.1X_0 + 0.6X_5 + \epsilon_Y
+\end{equation}
+
+The mechanism determining $Y$ therefore depends directly on $X_0$ and $X_5$.
+
+The causal model is restricted to variables that participate directly in this data-generating mechanism.
+
+The full predictive model solves a different problem. It asks which observed variables are most useful for predicting $Y$ in the training distribution.
+
+Because $X_3$ is strongly associated with $Y$, the model can use it even though the direction of causation is:
+
+
+\begin{equation} 
+Y \rightarrow X_3 
+\end{equation}
+
+This works well while the statistical relationship observed during training remains stable. If the distribution of $X_3$ changes independently of the mechanism generating $Y$, that learned predictive relationship becomes unreliable.
+
+## Causal does not automatically mean more accurate
+
+It is important not to overstate the result.
+
+The causal model is not necessarily the most accurate predictor in the original environment.
+
+A purely predictive model can exploit any statistical relationship that improves prediction, including downstream variables and other correlates. If those relationships remain stable at deployment, using them can be beneficial.
+
+The potential advantage of causal feature selection is different. It may provide greater stability when non-causal associations change while the target-generating mechanism remains stable.
+
+This can matter when models are deployed across:
+
+- different populations,
+- changing economic conditions,
+- policy environments,
+- different institutions,
+- geographic regions,
+- changing measurement systems, or
+- different periods of time.
+
+In such settings, the variables that were most predictive historically are not necessarily the variables that will remain most reliable.
+
+## What this experiment does not show
+
+This is deliberately a small synthetic example.
+
+The causal structure is known in advance, the structural relationships are linear, and the distribution shifts are introduced manually. In real applications, the causal graph usually has to be learned from data, elicited from domain knowledge, or estimated using a combination of both.
+
+Causal mechanisms can also change.
+
+If the mechanism relating $X_0$ or $X_5$ to $Y$ changed, the causal model in this example could degrade as well.
+
+The more precise conclusion is therefore:
+
+> When the causal mechanism generating the target remains stable, models that rely on its direct causes can be less sensitive to shifts in non-causal predictors.
+
+That is narrower than saying causal models are always robust, but it captures the useful idea demonstrated by the experiment.
+
+## Takeaway
+
+This small experiment shows why causal structure can matter even when the final objective is prediction.
+
+A model using all available information can perform better when the deployment environment closely resembles the training environment. But part of that advantage may come from exploiting associations that are **fragile** under environmental change.
+
+A model using direct causes may sacrifice some initial predictive accuracy while remaining more stable when non-causal predictors shift.
+
+This is one motivation for combining causal discovery with machine learning: not simply to improve prediction on familiar data, but to identify relationships that may remain meaningful when the environment changes.

@@ -14,14 +14,29 @@ body {
 }
 
 .navbar {
-  box-shadow: 0 1px 0 rgba(255,255,255,.1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .1);
 }
+
+/* -------------------------
+   Homepage hero
+   ------------------------- */
 
 .hero {
-  padding: 5.5rem 0 4.5rem;
-  max-width: 980px;
+  padding: 2rem 0 4.5rem;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
+/* Wide homepage logo/banner */
+.hero-logo {
+  display: block;
+  width: 100%;
+  max-width: 1500px;
+  height: auto;
+  margin: 0 auto 2.75rem;
+}
+
+/* Keep the text narrower than the banner */
 .hero h1 {
   font-size: clamp(2.8rem, 6vw, 5.2rem);
   line-height: 1.03;
@@ -38,12 +53,17 @@ body {
 }
 
 .hero-kicker {
+  max-width: 950px;
   font-size: .78rem;
   font-weight: 700;
   letter-spacing: .16em;
   color: var(--accent);
   margin-bottom: 1.15rem;
 }
+
+/* -------------------------
+   Research cards
+   ------------------------- */
 
 .card-grid {
   display: grid;
@@ -57,24 +77,30 @@ body {
   border-radius: 16px;
   padding: 1.5rem;
   background: var(--paper);
-  box-shadow: 0 6px 24px rgba(16,24,40,.04);
+  box-shadow: 0 6px 24px rgba(16, 24, 40, .04);
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
 .research-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(16,24,40,.08);
+  box-shadow: 0 10px 28px rgba(16, 24, 40, .08);
 }
 
 .research-card h3 {
   margin-top: 0;
 }
 
+/* -------------------------
+   Page styling
+   ------------------------- */
+
 .quarto-title-banner {
   background: linear-gradient(135deg, #f7f9fc 0%, #eef2ff 100%);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   letter-spacing: -0.02em;
 }
 
@@ -102,11 +128,34 @@ blockquote {
   border-radius: 0 10px 10px 0;
 }
 
+/* -------------------------
+   Responsive / mobile
+   ------------------------- */
+
 @media (max-width: 850px) {
   .card-grid {
     grid-template-columns: 1fr;
   }
+
   .hero {
-    padding: 3.5rem 0 2.5rem;
+    padding: 1.5rem 0 2.5rem;
+  }
+
+  .hero-logo {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 10vw, 3.5rem);
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .hero-kicker {
+    font-size: .7rem;
+    letter-spacing: .12em;
   }
 }
