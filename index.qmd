@@ -8,9 +8,16 @@ title-block-banner: false
 
 ![](assets/brandon-banner.png){.hero-logo}
 
+<<<<<<< HEAD
 # Building AI systems that learn and reason about causation 
 
 I develop **causal AI systems that learn structure, model how systems change, and reason about the consequences of interventions under uncertainty**. My work brings together causal discovery, forecasting, Bayesian inference, simulation, and agent-based modelling, with a growing focus on causal world models and physical AI.
+=======
+
+# Building AI systems that understand causes, predict change, and reason under uncertainty
+
+I build causal AI systems that combine causal discovery, forecasting, Bayesian inference, and agent-based simulation. The goal is to move beyond prediction toward models that explain why outcomes occur, estimate the effects of interventions, quantify uncertainty, and remain reliable as conditions change.
+>>>>>>> 0e1e5c63b410a07047576dd2ae25d4d13f102381
 
 [Explore my research](research.qmd){.btn .btn-primary .btn-lg} [Read research notes](posts/index.qmd){.btn .btn-outline-secondary .btn-lg}
 :::
