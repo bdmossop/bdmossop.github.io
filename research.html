@@ -2,18 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="Research themes and current projects.">
 
-<title>Brandon Mossop - Research</title>
+<title>Research – Brandon Mossop</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -31,23 +37,30 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./assets/favicon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<link href="./assets/causal-graph-icon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2b00583592e815700529758077e730d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,6 +69,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -63,62 +77,111 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Brandon Mossop</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./research.html" rel="" target="" aria-current="page">
- <span class="menu-text">Research</span></a>
+    <a class="nav-link active" href="./research.html" aria-current="page"> 
+<span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="./publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/index.html" rel="" target="">
- <span class="menu-text">Research Notes</span></a>
+    <a class="nav-link" href="./posts/index.html"> 
+<span class="menu-text">Research Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html" rel="" target="">
- <span class="menu-text">CV</span></a>
+    <a class="nav-link" href="./cv.html"> 
+<span class="menu-text">CV</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bdmossop" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=MAJ99A8AAAAJ&amp;hl=en&amp;oi=ao" target="_blank"> <i class="bi bi-mortarboard" role="img" aria-label="Google Scholar">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://orcid.org/0009-0000-6017-8079" target="_blank"> <i class="bi bi-person-badge" role="img" aria-label="ORCID">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bdmossop" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/brandon-mossop-1a27b799/" target="_blank"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:brandon.mossop@queensu.ca"> <i class="bi bi-envelope" role="img" aria-label="Email Brandon Mossop">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -137,14 +200,15 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#causal-forecasting" id="toc-causal-forecasting" class="nav-link" data-scroll-target="#causal-forecasting">Causal Forecasting</a>
   <ul class="collapse">
-  <li><a href="#carebayes" id="toc-carebayes" class="nav-link" data-scroll-target="#carebayes">CaReBayes</a></li>
-  <li><a href="#causal-feature-selection-for-forecasting" id="toc-causal-feature-selection-for-forecasting" class="nav-link" data-scroll-target="#causal-feature-selection-for-forecasting">Causal feature selection for forecasting</a></li>
+  <li><a href="#carebayes" id="toc-carebayes" class="nav-link" data-scroll-target="#carebayes">Regime-Aware Causal Bayesian Forecasting for Non-Stationary Time Series</a></li>
+  <li><a href="#causal-feature-selection" id="toc-causal-feature-selection" class="nav-link" data-scroll-target="#causal-feature-selection">Causal feature selection for forecasting</a></li>
   </ul></li>
-  <li><a href="#causal-simulation-and-agents" id="toc-causal-simulation-and-agents" class="nav-link" data-scroll-target="#causal-simulation-and-agents">Causal Simulation and Agents</a>
+  <li><a href="#causal-simulation-and-agent-based-models" id="toc-causal-simulation-and-agent-based-models" class="nav-link" data-scroll-target="#causal-simulation-and-agent-based-models">Causal Simulation and Agent-Based Models</a>
   <ul class="collapse">
   <li><a href="#causal-simulation-and-agents" id="toc-causal-simulation-and-agents" class="nav-link" data-scroll-target="#causal-simulation-and-agents">Learning probabilistic agent behavior through causal discovery</a></li>
   <li><a href="#amortized-bayesian-policy-simulation" id="toc-amortized-bayesian-policy-simulation" class="nav-link" data-scroll-target="#amortized-bayesian-policy-simulation">Amortized Bayesian policy simulation</a></li>
   </ul></li>
+  <li><a href="#current-research-direction" id="toc-current-research-direction" class="nav-link" data-scroll-target="#current-research-direction">Towards causal world models</a></li>
   <li><a href="#research-philosophy" id="toc-research-philosophy" class="nav-link" data-scroll-target="#research-philosophy">Research philosophy</a></li>
   </ul>
 </nav>
@@ -172,103 +236,158 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
-<p>My research focuses on AI systems that explicitly represent causal structure and uncertainty. I am particularly interested in settings where predictive accuracy alone is insufficient because the real question is what will happen after an intervention or when the data-generating process changes.</p>
+
+<p>My research focuses on building <strong>AI systems that explicitly represent causal structure and uncertainty</strong>. I am particularly interested in settings where predictive accuracy alone is not enough because the central question is not only what is likely to happen, but <strong>why it happens, what will happen after an intervention, and how predictions should change when the underlying system changes</strong>.</p>
+<p>This motivates my work across causal discovery, forecasting, Bayesian inference, simulation, and agent-based modelling.</p>
 <section id="causal-discovery" class="level2">
 <h2 class="anchored" data-anchor-id="causal-discovery">Causal Discovery</h2>
-<p>Causal discovery aims to recover plausible causal structure from observational data. My work combines statistical discovery procedures with temporal structure, domain context, and language-model reasoning.</p>
+<p>Causal discovery aims to recover plausible causal structure from observational data. Rather than treating relationships between variables as purely statistical associations, causal discovery seeks to identify which variables may directly influence others.</p>
+<p>My work explores how statistical discovery can be strengthened with temporal structure, contextual knowledge, and language-model reasoning, while keeping statistical evidence central to the discovery process.</p>
 <section id="agentic-causal-discovery" class="level3">
 <h3 class="anchored" data-anchor-id="agentic-causal-discovery">Agentic causal discovery</h3>
-<p>I investigate multi-agent workflows in which specialized agents propose, augment, and critique causal structure. Statistical conditional-independence evidence remains central, while contextual reasoning is used to help orient or recover relationships that are difficult to identify from finite observational data alone.</p>
+<p>I investigate multi-agent workflows in which specialized agents contribute different forms of reasoning to causal discovery. These agents can propose orientations, identify potentially missing relationships, and critique candidate causal graphs.</p>
+<p>The goal is not to replace statistical causal discovery with language models. Instead, I am interested in whether contextual reasoning can complement conditional-independence evidence, particularly when finite samples, weak statistical signals, or domain-specific relationships make causal structure difficult to identify from data alone.</p>
 <p><strong>Key themes:</strong></p>
 <ul>
 <li>expert-in-the-loop causal orientation</li>
 <li>small language models for contextual reasoning</li>
-<li>agent-based critique and edge augmentation</li>
+<li>multi-agent critique and edge augmentation</li>
 <li>causal story reasoning</li>
-<li>evaluation using structural Hamming distance and F1</li>
+<li>structural evaluation using F1 and structural Hamming distance</li>
 </ul>
 </section>
 </section>
 <section id="causal-forecasting" class="level2">
 <h2 class="anchored" data-anchor-id="causal-forecasting">Causal Forecasting</h2>
-<p>Forecasting models often perform well while leaving the data-generating mechanism implicit. My work studies whether learned causal structure can improve feature selection, robustness, interpretation, and intervention reasoning.</p>
+<p>Forecasting models are typically optimized to predict future observations, while the mechanisms producing those observations remain implicit.</p>
+<p>My work investigates whether explicitly learning causal structure can make forecasting models more <strong>interpretable, robust to changing conditions, and useful for reasoning about interventions</strong>.</p>
 <section id="carebayes" class="level3">
-<h3 class="anchored" data-anchor-id="carebayes">CaReBayes</h3>
-<p><strong>Regime-Aware Causal Bayesian Forecasting for Non-Stationary Time Series</strong></p>
-<p>CaReBayes models non-stationary systems as a collection of regimes with different temporal causal structures. A causal graph is estimated for each regime, Bayesian structural models are fit over the discovered parent sets, and new observations are classified according to their predictive compatibility with each regime.</p>
-<p>The broader idea is that distribution shift may sometimes reflect a change in mechanism, not merely a change in coefficients.</p>
+<h3 class="anchored" data-anchor-id="carebayes">Regime-Aware Causal Bayesian Forecasting for Non-Stationary Time Series</h3>
+<p>CaReBayes (Causal Regime Bayesian) is a forecasting framework for systems whose underlying relationships can change over time.</p>
+<p>Rather than assuming that a single model describes the entire data-generating process, CaReBayes represents a non-stationary system as a collection of regimes with different temporal causal structures. A causal graph is estimated for each regime, Bayesian structural models are fit over the discovered parent sets, and new observations are assigned to regimes according to their predictive compatibility.</p>
+<p>The broader idea is that distribution shift can sometimes reflect a <strong>change in mechanism</strong>, rather than simply a change in model coefficients. By explicitly representing those mechanisms, the model can adapt its forecasts while also providing uncertainty estimates and a structural explanation for why its predictions change.</p>
 </section>
-<section id="causal-feature-selection-for-forecasting" class="level3">
-<h3 class="anchored" data-anchor-id="causal-feature-selection-for-forecasting">Causal feature selection for forecasting</h3>
-<p>Another line of work studies whether causal discovery can identify compact predictor sets that improve both forecasting performance and interpretability, particularly in infectious-disease forecasting.</p>
+<section id="causal-feature-selection" class="level3">
+<h3 class="anchored" data-anchor-id="causal-feature-selection">Causal feature selection for forecasting</h3>
+<p>Another line of my work studies whether causal discovery can identify compact and meaningful predictor sets for forecasting.</p>
+<p>Instead of selecting predictors solely according to correlation or predictive contribution, causal feature selection attempts to identify variables that have a more direct relationship with the forecasting target. I have explored this idea in infectious-disease forecasting, where causal feature selection can improve interpretability while maintaining or improving predictive performance.</p>
+<p>More broadly, I am interested in whether causal feature selection can improve robustness when the relationships between non-causal predictors and the target change over time.</p>
 </section>
 </section>
-<section id="causal-simulation-and-agents" class="level2">
-<h2 class="anchored" data-anchor-id="causal-simulation-and-agents">Causal Simulation and Agents</h2>
+<section id="causal-simulation-and-agent-based-models" class="level2">
+<h2 class="anchored" data-anchor-id="causal-simulation-and-agent-based-models">Causal Simulation and Agent-Based Models</h2>
 <p>I am increasingly interested in using causal models as the structural layer inside simulation systems.</p>
+<p>Agent-based models are powerful because they can represent heterogeneous individuals, local interactions, and emergent system behaviour. However, the behavioural rules governing agents are often specified manually. This creates an opportunity to combine causal discovery with simulation so that some of those behavioural mechanisms can instead be learned from data.</p>
 <section id="causal-simulation-and-agents" class="level3">
 <h3 class="anchored" data-anchor-id="causal-simulation-and-agents">Learning probabilistic agent behavior through causal discovery</h3>
-<p>Rather than manually specifying every behavioral rule in an agent-based model, this project asks whether observational data can be used to learn:</p>
+<p>This project explores whether observational data can be used to learn behavioural rules for agents.</p>
+<p>The proposed framework would use causal discovery to identify the variables that directly influence an agent’s decisions, estimate probabilistic structural functions over those relationships, and then use those learned mechanisms as stochastic decision rules inside an agent-based model.</p>
+<p>The resulting simulator could be evaluated at two levels:</p>
 <ol type="1">
-<li>which variables directly influence an agent’s decisions,</li>
-<li>probabilistic structural functions over those relationships, and</li>
-<li>uncertainty in both individual and emergent system behavior.</li>
+<li>whether it reproduces observed individual and system-level behaviour, and</li>
+<li>whether it correctly predicts how the system responds to interventions.</li>
 </ol>
-<p>The resulting simulator could then be evaluated not only on whether it reproduces observed data, but on whether it predicts responses to interventions.</p>
+<p>This is important because reproducing observed data is not necessarily sufficient for a useful policy simulator. A model intended for intervention analysis should also represent how behaviour changes when the environment itself is changed.</p>
 </section>
 <section id="amortized-bayesian-policy-simulation" class="level3">
 <h3 class="anchored" data-anchor-id="amortized-bayesian-policy-simulation">Amortized Bayesian policy simulation</h3>
-<p>A related direction uses amortized Bayesian inference to infer latent simulator parameters quickly across repeated policy scenarios. This could make uncertainty-aware simulation practical when traditional Bayesian calibration would be too expensive to repeat for every intervention.</p>
+<p>A related direction explores the use of <strong>amortized Bayesian inference</strong> for repeated simulation and policy analysis.</p>
+<p>Bayesian calibration can provide uncertainty over simulator parameters, but conventional inference may be computationally expensive when it must be repeated for many policy scenarios. Amortized inference instead learns an inference procedure that can be reused across related datasets and simulation conditions.</p>
+<p>I am interested in whether this can make uncertainty-aware policy simulation practical at scale, allowing posterior beliefs about latent mechanisms to be updated rapidly as new observations or interventions are considered.</p>
 </section>
+</section>
+<section id="current-research-direction" class="level2">
+<h2 class="anchored" data-anchor-id="current-research-direction">Towards causal world models</h2>
+<p>My broader research direction is to develop <strong>causal AI systems that can learn how environments change, reason about interventions, and represent uncertainty about their consequences</strong>.</p>
+<p>I am particularly interested in bringing ideas from causal discovery, Bayesian inference, forecasting, and simulation into <strong>world models</strong> and <strong>physical AI</strong>.</p>
+<p>Many AI systems can be viewed as learning a policy</p>
+<p><span class="math display">\[\begin{equation}
+\pi_\theta(a_t \mid s_t),
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\pi_\theta\)</span> is a policy parameterized by <span class="math inline">\(\theta\)</span>, <span class="math inline">\(s_t\)</span> represents the agent’s current state, and <span class="math inline">\(a_t\)</span> is the action it selects. In other words, the policy determines what action an agent should take in its current state.</p>
+<p>World models go a step further by learning how the environment evolves under those actions,</p>
+<p><span class="math display">\[\begin{equation}
+T_\phi(s_{t+1} \mid s_t, a_t),
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(T_\phi\)</span> is a learned transition or world model parameterized by <span class="math inline">\(\phi\)</span>, and <span class="math inline">\(s_{t+1}\)</span> represents the next state of the environment.</p>
+<p>I am particularly interested in giving these learned world models an explicitly causal interpretation,</p>
+<p><span class="math display">\[\begin{equation}
+T_\phi(s_{t+1} \mid s_t, \operatorname{do}(a_t)),
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\operatorname{do}(a_t)\)</span> indicates that the action is treated as an intervention on the environment rather than simply as something that was observed.</p>
+<p>In controlled environments, the predictive and interventional formulations may coincide. The distinction becomes more important when models are learned from observational data, when hidden confounding is possible, or when an agent must reason about the effects of actions outside its previous experience.</p>
+<p>My long-term interest is in whether causal world models can help AI systems reason about possible consequences before acting, while remaining robust, interpretable, and uncertainty-aware.</p>
 </section>
 <section id="research-philosophy" class="level2">
 <h2 class="anchored" data-anchor-id="research-philosophy">Research philosophy</h2>
-<p>I am most interested in methods that satisfy three properties at once: they should be <strong>mechanistic enough to support intervention</strong>, <strong>probabilistic enough to represent uncertainty</strong>, and <strong>practical enough to evaluate on real systems</strong>.</p>
+<p>Across these projects, I am most interested in methods that satisfy three properties at once:</p>
+<ul>
+<li><strong>Mechanistic enough to support intervention.</strong> A model should represent enough of the underlying structure of a system to reason about what may happen when that system is changed.</li>
+<li><strong>Probabilistic enough to represent uncertainty.</strong> Predictions and intervention estimates should reflect uncertainty in the data, learned mechanisms, latent parameters, and future outcomes.</li>
+<li><strong>Practical enough to evaluate on real systems.</strong> Causal models should ultimately be testable using realistic datasets, simulation environments, and decision-making problems.</li>
+</ul>
+<p>The broader goal of my research is to move from AI systems that primarily recognize patterns toward systems that can <strong>reason about mechanisms, interventions, uncertainty, and the consequences of actions</strong>.</p>
 
 
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
@@ -276,218 +395,366 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
       return codeEl.innerText;
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/brandonmossop\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
       });
     }
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/brandonmossop\.com");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-});
-</script>
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© 2026 Brandon Mossop</div>   
+    <div class="nav-footer-left">
+<p>© 2026 Brandon Mossop</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">Built with Quarto</div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
   </div>
 </footer>
+
 
 
 

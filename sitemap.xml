@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://brandonmossop.com/cv.html</loc>
-    <lastmod>2026-09-20T18:24:05.932Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brandonmossop.com/publications.html</loc>
-    <lastmod>2026-09-20T18:24:05.220Z</lastmod>
+    <loc>https://brandonmossop.com/posts/distribution-shifts/index.html</loc>
+    <lastmod>2026-09-21T22:07:29.353Z</lastmod>
   </url>
   <url>
     <loc>https://brandonmossop.com/posts/uncertainty-policy-simulation/index.html</loc>
-    <lastmod>2026-09-20T18:24:04.440Z</lastmod>
+    <lastmod>2026-09-21T22:07:29.353Z</lastmod>
   </url>
   <url>
     <loc>https://brandonmossop.com/posts/index.html</loc>
-    <lastmod>2026-09-20T18:24:01.922Z</lastmod>
+    <lastmod>2026-09-21T22:07:29.353Z</lastmod>
   </url>
   <url>
-    <loc>https://brandonmossop.com/posts/causal-ai-beyond-prediction/index.html</loc>
-    <lastmod>2026-09-20T18:24:00.356Z</lastmod>
+    <loc>https://brandonmossop.com/cv.html</loc>
+    <lastmod>2026-09-21T22:07:29.352Z</lastmod>
   </url>
   <url>
-    <loc>https://brandonmossop.com/research.html</loc>
-    <lastmod>2026-09-20T18:23:59.750Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brandonmossop.com/posts/causal-abm/index.html</loc>
-    <lastmod>2026-09-20T18:24:00.878Z</lastmod>
-  </url>
-  <url>
-    <loc>https://brandonmossop.com/posts/distribution-shifts/index.html</loc>
-    <lastmod>2026-09-20T18:24:03.914Z</lastmod>
+    <loc>https://brandonmossop.com/publications.html</loc>
+    <lastmod>2026-09-21T22:07:29.353Z</lastmod>
   </url>
   <url>
     <loc>https://brandonmossop.com/index.html</loc>
-    <lastmod>2026-09-20T18:24:04.861Z</lastmod>
+    <lastmod>2026-09-21T22:07:29.352Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brandonmossop.com/research.html</loc>
+    <lastmod>2026-09-21T22:07:29.353Z</lastmod>
   </url>
   <url>
     <loc>https://brandonmossop.com/about.html</loc>
-    <lastmod>2026-09-20T18:24:05.577Z</lastmod>
+    <lastmod>2026-09-21T22:07:29.330Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brandonmossop.com/posts/causal-abm/index.html</loc>
+    <lastmod>2026-09-21T22:07:29.353Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brandonmossop.com/posts/causal-ai-beyond-prediction/index.html</loc>
+    <lastmod>2026-09-21T22:07:29.353Z</lastmod>
   </url>
 </urlset>
