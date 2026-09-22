@@ -7,7 +7,7 @@ A concise web-based version of my academic CV is below.
 
 ## Profile summary
 
-Ph.D. Candidate in Computing at Queen's University and Lead Data Scientist at Venford Technologies. My work spans causal inference, causal discovery, forecasting, Bayesian modelling, simulation, and explainable AI, with a particular focus on intervention reasoning, uncertainty quantification, and decision-making under changing conditions.
+Ph.D. Candidate in Computing at Queen's University and Lead Data Scientist at Venford Technologies. My work spans causal inference, Bayesian modelling, simulation, and explainable AI, with a particular focus on causal discovery, forecasting, and decision-making under changing conditions.
 
 ## Education
 

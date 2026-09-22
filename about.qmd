@@ -3,7 +3,7 @@ title: "About"
 ---
 
 ::: {.columns}
-::: {.column width="68%"}
+::: {.column width="55%"}
 
 I am a Ph.D. Candidate in Computing at Queen's University and a researcher in the [GOAL Lab](https://goal-soc-queensu.github.io/), working at the intersection of **causal inference, machine learning, Bayesian modelling, and simulation.** 
 
@@ -13,7 +13,7 @@ This motivates my work on causal discovery, causal forecasting, intervention rea
 
 :::
 
-::: {.column width="32%"}
+::: {.column width="45%"}
 
 ![](assets/profile.jpg){fig-alt="Brandon Mossop" width="100%"}
 
@@ -24,7 +24,7 @@ This motivates my work on causal discovery, causal forecasting, intervention rea
 
 My academic path began in Civil Engineering at Lakehead University. After graduating, I spent about four years working in the oil and gas sector in Alberta. During that time, however, I became increasingly interested in computer programming and artificial intelligence.
 
-A major turning point came when I read Douglas Hofstadter's *Gödel, Escher, Bach* (GEB). Like many researchers who have been drawn to artificial intelligence by the book, I found its exploration of intelligence, computation, self-reference, and the nature of thought fascinating. It left me wanting to understand these ideas more deeply and ultimately convinced me to pursue computer science.
+A major turning point came when I read Douglas Hofstadter's *Gödel, Escher, Bach*. Like many researchers who have been drawn to artificial intelligence by the book, I found its exploration of intelligence, computation, self-reference, and the nature of thought fascinating. It left me wanting to understand these ideas more deeply and ultimately convinced me to pursue computer science.
 
 I returned to Lakehead University to study Computer Science, and then continued into a master's degree specializing in Artificial Intelligence. During that period, my interests gradually shifted from conventional machine learning toward questions about how AI systems can reason about the underlying mechanisms that generate data rather than simply learn statistical patterns from it.
 
@@ -37,7 +37,9 @@ That interest eventually led me to my current doctoral research in Computing at 
 
 Outside of research, I am an enthusiastic sports fan and enjoy both watching and playing. I follow Liverpool FC and the Miami Dolphins, and I particularly enjoy playing soccer and tennis, as well as running.
 
-I am also an avid reader, especially of popular science and books that explore big ideas about mathematics, physics, cognition, and intelligence. Some of my favourite authors include Brian Greene and Douglas Hofstadter. I think that Brian Greene's *The Elegant Universe* was the first non-fiction book that made me realize that science can be as strange and fantasical as fiction. And I already mentioned how Hofstadter's *GEB* inspired my original pursuit of AI. I am similarly fascinated by the work of M. C. Escher, particularly the way his art plays with geometry, perspective, infinity, and our perception of space.
+I am also an avid reader, especially of popular science and books that explore big ideas about mathematics, physics, cognition, and intelligence. Brian Greene's *The Elegant Universe* was one of the first nonfiction books that showed me science could be every bit as strange, imaginative, and surprising as fiction. I also continue to enjoy authors such as Douglas Hofstadter, whose work connects mathematics, computation, cognition, and philosophy in ways that have strongly shaped my interests.
+
+That interest extends to the work of M. C. Escher. I am particularly drawn to the way his art plays with geometry, recursion, perspective, infinity, and our perception of space, themes that connect naturally with many of the ideas I find interesting in mathematics and computation.
 
 Another long-standing interest of mine is urban planning. I am interested in how we can design communities that are more connected, walkable, healthy, and enjoyable places to live. This also overlaps with my professional interests: I am particularly interested in how simulation, agent-based modelling, and other computational approaches can help us understand how planning and policy decisions shape cities and communities over time.
 

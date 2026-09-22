@@ -58,7 +58,7 @@ A causal feature-selection approach for identifying compact, interpretable predi
 
 My recent work explores causal discovery systems in which statistical evidence is complemented by small language models and specialized agents for orientation, augmentation, critique, and causal-story reasoning.
 
-[View research →](research.qmd#agentic-causal-discovery) · [Agent-guided causal discovery, FLLM 2025 →](https://doi.org/10.1109/FLLM67465.2025.11391103){target="_blank"} · 
+[View research →](research.qmd#agentic-causal-discovery) · Read the papers: [Agent-guided causal discovery, FLLM 2025 →](https://doi.org/10.1109/FLLM67465.2025.11391103){target="_blank"} · 
 [Causal story-guided discovery, FLLM 2026 →](publications.qmd#causal-story-guided-agentic-causal-discovery-with-small-language-models)
 
 
