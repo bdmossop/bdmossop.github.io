@@ -6,17 +6,16 @@
       version="2.0">
 <channel>
 <title>Brandon Mossop</title>
-<link>https://brandonmossop.com/posts/</link>
+<link>https://brandonmossop.com/posts/index.html</link>
 <atom:link href="https://brandonmossop.com/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Short notes on causal AI, simulation, uncertainty, and emerging research ideas.</description>
-<generator>quarto-1.10.18</generator>
-<lastBuildDate>Sun, 20 Sep 2026 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.3.450</generator>
+<lastBuildDate>Sun, 20 Sep 2026 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Why Causal Structure Can Be More Robust to Distribution Shift</title>
   <dc:creator>Brandon Mossop</dc:creator>
-  <link>https://brandonmossop.com/posts/distribution-shifts/</link>
+  <link>https://brandonmossop.com/posts/distribution-shifts/index.html</link>
   <description><![CDATA[ 
-
 
 
 
@@ -40,9 +39,9 @@
 </p>
 <p>Here, <img src="https://latex.codecogs.com/png.latex?X_0"> and <img src="https://latex.codecogs.com/png.latex?X_5"> are the direct causes, or causal parents, of <img src="https://latex.codecogs.com/png.latex?Y">. <img src="https://latex.codecogs.com/png.latex?X_3"> is a downstream effect of the target <img src="https://latex.codecogs.com/png.latex?Y">, <img src="https://latex.codecogs.com/png.latex?X_2"> is caused by <img src="https://latex.codecogs.com/png.latex?X_0">, and <img src="https://latex.codecogs.com/png.latex?X_4"> is unrelated to the target in the data-generating process.</p>
 <div class="cell" data-execution_count="1">
-<details class="code-fold">
+<details>
 <summary>Show simulation code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
 background-color: null;
@@ -104,10 +103,8 @@ font-style: inherit;">len</span>(var_names))</span>
 <span id="cb1-14"></span>
 <span id="cb1-15"><span class="cf" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">for</span> d <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">in</span> <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">range</span>(D):</span>
@@ -198,13 +195,13 @@ font-style: inherit;">=</span> pd.DataFrame(data, columns<span class="op" style=
 background-color: null;
 font-style: inherit;">=</span>var_names)</span>
 <span id="cb1-32"></span>
-<span id="cb1-33">df.head()</span></code></pre></div></div>
+<span id="cb1-33">df.head()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -219,7 +216,7 @@ font-style: inherit;">=</span>var_names)</span>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
+<td data-quarto-table-cell-role="th">0</td>
 <td>-1.458388</td>
 <td>0.342680</td>
 <td>1.007197</td>
@@ -229,7 +226,7 @@ font-style: inherit;">=</span>var_names)</span>
 <td>0.383872</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
+<td data-quarto-table-cell-role="th">1</td>
 <td>-1.380790</td>
 <td>-0.189496</td>
 <td>0.116922</td>
@@ -239,7 +236,7 @@ font-style: inherit;">=</span>var_names)</span>
 <td>0.328611</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
+<td data-quarto-table-cell-role="th">2</td>
 <td>0.103121</td>
 <td>-0.104411</td>
 <td>-0.520968</td>
@@ -249,7 +246,7 @@ font-style: inherit;">=</span>var_names)</span>
 <td>0.958303</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
+<td data-quarto-table-cell-role="th">3</td>
 <td>1.881917</td>
 <td>-0.251879</td>
 <td>-0.654244</td>
@@ -259,7 +256,7 @@ font-style: inherit;">=</span>var_names)</span>
 <td>1.988348</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
+<td data-quarto-table-cell-role="th">4</td>
 <td>0.087557</td>
 <td>0.055676</td>
 <td>0.231155</td>
@@ -279,9 +276,9 @@ font-style: inherit;">=</span>var_names)</span>
 <h2 class="anchored" data-anchor-id="train-and-test-split">Train and test split</h2>
 <p>The first 600 observations are used for training and the remaining 400 are held out for testing.</p>
 <div class="cell" data-execution_count="2">
-<details class="code-fold">
+<details>
 <summary>Show train-test split</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">train <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">train <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> df.iloc[:<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -317,7 +314,7 @@ font-style: inherit;">len</span>(test)<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"</span>)</span></code></pre></div></div>
+font-style: inherit;">"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Training observations: 600
@@ -333,9 +330,9 @@ Test observations: 400</code></pre>
 <p>The <strong>all except X3</strong> model uses all observed predictors except <img src="https://latex.codecogs.com/png.latex?X_3">, the downstream effect of <img src="https://latex.codecogs.com/png.latex?Y">.</p>
 <p>The <strong>all predictors</strong> model uses every available predictor, including <img src="https://latex.codecogs.com/png.latex?X_3">.</p>
 <div class="cell" data-execution_count="3">
-<details class="code-fold">
+<details>
 <summary>Show model definitions</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">feature_sets <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">feature_sets <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {</span>
 <span id="cb4-2">    <span class="st" style="color: #20794D;
@@ -381,10 +378,8 @@ font-style: inherit;">=</span> {}</span>
 <span id="cb4-8"></span>
 <span id="cb4-9"><span class="cf" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">for</span> name, features <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">in</span> feature_sets.items():</span>
 <span id="cb4-10">    model <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -394,7 +389,7 @@ background-color: null;
 font-style: inherit;">"Y"</span>])</span>
 <span id="cb4-12">    models[name] <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span> model</span></code></pre></div></div>
+font-style: inherit;">=</span> model</span></code></pre></div>
 </details>
 </div>
 </section>
@@ -402,11 +397,10 @@ font-style: inherit;">=</span> model</span></code></pre></div></div>
 <h2 class="anchored" data-anchor-id="performance-before-distribution-shift">Performance before distribution shift</h2>
 <p>First, the three trained models are evaluated on the original test distribution.</p>
 <div class="cell" data-execution_count="4">
-<details class="code-fold">
+<details>
 <summary>Show evaluation code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="kw" style="color: #003B4F;
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">def</span> evaluate_models(test_data):</span>
 <span id="cb5-2">    scores <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -414,10 +408,8 @@ font-style: inherit;">=</span> {}</span>
 <span id="cb5-3"></span>
 <span id="cb5-4">    <span class="cf" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">for</span> name, features <span class="kw" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">in</span> feature_sets.items():</span>
 <span id="cb5-5">        predictions <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -433,7 +425,6 @@ font-style: inherit;">"Y"</span>],</span>
 <span id="cb5-10"></span>
 <span id="cb5-11">    <span class="cf" style="color: #003B4F;
 background-color: null;
-font-weight: bold;
 font-style: inherit;">return</span> scores</span>
 <span id="cb5-12"></span>
 <span id="cb5-13"></span>
@@ -466,13 +457,13 @@ font-style: inherit;">round</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>)</span>
 <span id="cb5-24"></span>
-<span id="cb5-25">baseline_results</span></code></pre></div></div>
+<span id="cb5-25">baseline_results</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -482,17 +473,17 @@ font-style: inherit;">3</span>)</span>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
+<td data-quarto-table-cell-role="th">0</td>
 <td>Causal parents</td>
 <td>1.036</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
+<td data-quarto-table-cell-role="th">1</td>
 <td>All except X3</td>
 <td>1.037</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
+<td data-quarto-table-cell-role="th">2</td>
 <td>All predictors</td>
 <td>0.769</td>
 </tr>
@@ -514,9 +505,9 @@ font-style: inherit;">3</span>)</span>
 <p>Now suppose the model is deployed in a new environment where the observed distribution of <img src="https://latex.codecogs.com/png.latex?X_3"> changes.</p>
 <p>I simulate this by adding 5 to every test observation of <img src="https://latex.codecogs.com/png.latex?X_3">.</p>
 <div class="cell" data-execution_count="5">
-<details class="code-fold">
+<details>
 <summary>Show X3 distribution shift</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">test_shift_x3 <span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">test_shift_x3 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> test.copy()</span>
 <span id="cb6-2">test_shift_x3[<span class="st" style="color: #20794D;
@@ -556,13 +547,13 @@ font-style: inherit;">round</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>)</span>
 <span id="cb6-14"></span>
-<span id="cb6-15">shift_x3_results</span></code></pre></div></div>
+<span id="cb6-15">shift_x3_results</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="30">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -572,17 +563,17 @@ font-style: inherit;">3</span>)</span>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
+<td data-quarto-table-cell-role="th">0</td>
 <td>Causal parents</td>
 <td>1.036</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
+<td data-quarto-table-cell-role="th">1</td>
 <td>All except X3</td>
 <td>1.037</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
+<td data-quarto-table-cell-role="th">2</td>
 <td>All predictors</td>
 <td>2.570</td>
 </tr>
@@ -652,14 +643,13 @@ font-style: inherit;">3</span>)</span>
   <category>Machine Learning</category>
   <category>Code</category>
   <category>Research Notes</category>
-  <guid>https://brandonmossop.com/posts/distribution-shifts/</guid>
-  <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
+  <guid>https://brandonmossop.com/posts/distribution-shifts/index.html</guid>
+  <pubDate>Sun, 20 Sep 2026 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Causal AI Beyond Prediction</title>
-  <link>https://brandonmossop.com/posts/causal-ai-beyond-prediction/</link>
+  <link>https://brandonmossop.com/posts/causal-ai-beyond-prediction/index.html</link>
   <description><![CDATA[ 
-
 
 
 
@@ -675,14 +665,13 @@ font-style: inherit;">3</span>)</span>
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Causal AI</category>
   <category>Causal Inference</category>
-  <guid>https://brandonmossop.com/posts/causal-ai-beyond-prediction/</guid>
-  <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
+  <guid>https://brandonmossop.com/posts/causal-ai-beyond-prediction/index.html</guid>
+  <pubDate>Fri, 18 Sep 2026 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Can Causal Discovery Learn the Rules of an Agent-Based Model?</title>
-  <link>https://brandonmossop.com/posts/causal-abm/</link>
+  <link>https://brandonmossop.com/posts/causal-abm/index.html</link>
   <description><![CDATA[ 
-
 
 
 
@@ -705,14 +694,13 @@ font-style: inherit;">3</span>)</span>
   <category>Agent-Based Modelling</category>
   <category>Causal Discovery</category>
   <category>Simulation</category>
-  <guid>https://brandonmossop.com/posts/causal-abm/</guid>
-  <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
+  <guid>https://brandonmossop.com/posts/causal-abm/index.html</guid>
+  <pubDate>Thu, 17 Sep 2026 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Why Policy Simulation Needs Uncertainty</title>
-  <link>https://brandonmossop.com/posts/uncertainty-policy-simulation/</link>
+  <link>https://brandonmossop.com/posts/uncertainty-policy-simulation/index.html</link>
   <description><![CDATA[ 
-
 
 
 
@@ -737,8 +725,8 @@ font-style: inherit;">3</span>)</span>
   <category>Bayesian Inference</category>
   <category>Policy Simulation</category>
   <category>Uncertainty</category>
-  <guid>https://brandonmossop.com/posts/uncertainty-policy-simulation/</guid>
-  <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
+  <guid>https://brandonmossop.com/posts/uncertainty-policy-simulation/index.html</guid>
+  <pubDate>Wed, 16 Sep 2026 04:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

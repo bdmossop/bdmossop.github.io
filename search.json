@@ -1,110 +1,5 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "I am a Ph.D. Candidate in Computing at Queen’s University and a researcher in the GOAL Lab, working at the intersection of causal inference, machine learning, Bayesian modelling, and simulation.\nMy research focuses on how causal structure can be learned from data and used to build artificial intelligence systems that are more robust, interpretable, and capable of reasoning about interventions. A recurring question across my work is how we can move beyond predicting what is likely to happen toward understanding why it happens and what may happen if we actively change the system.\nThis motivates my work on causal discovery, causal forecasting, intervention reasoning, uncertainty quantification, and agent-based modelling, with a broader interest in developing AI systems that can reason about the consequences of actions rather than only recognize statistical patterns."
-  },
-  {
-    "objectID": "about.html#my-academic-path",
-    "href": "about.html#my-academic-path",
-    "title": "About",
-    "section": "My academic path",
-    "text": "My academic path\nMy academic path began in Civil Engineering at Lakehead University. After graduating, I spent about four years working in the oil and gas sector in Alberta. During that time, however, I became increasingly interested in computer programming and artificial intelligence.\nA major turning point came when I read Douglas Hofstadter’s Gödel, Escher, Bach. Like many researchers who have been drawn to artificial intelligence by the book, I found its exploration of intelligence, computation, self-reference, and the nature of thought fascinating. It left me wanting to understand these ideas more deeply and ultimately convinced me to pursue computer science.\nI returned to Lakehead University to study Computer Science, and then continued into a master’s degree specializing in Artificial Intelligence. During that period, my interests gradually shifted from conventional machine learning toward questions about how AI systems can reason about the underlying mechanisms that generate data rather than simply learn statistical patterns from it.\nAnother book played an important role in that transition: Judea Pearl and Dana Mackenzie’s The Book of Why. Its treatment of causality, intervention, and counterfactual reasoning had a similar impact on me to Gödel, Escher, Bach. It introduced me to the idea that there is a fundamental difference between observing that two things are associated and understanding what would happen if we actively changed one of them.\nThat interest eventually led me to my current doctoral research in Computing at Queen’s University, where I study causal structure learning and its use in building more robust, explainable, and intervention-aware artificial intelligence systems."
-  },
-  {
-    "objectID": "about.html#beyond-research",
-    "href": "about.html#beyond-research",
-    "title": "About",
-    "section": "Beyond research",
-    "text": "Beyond research\nOutside of research, I am an enthusiastic sports fan and enjoy both watching and playing. I follow Liverpool FC and the Miami Dolphins, and I particularly enjoy playing soccer and tennis, as well as running.\nI am also an avid reader, especially of popular science and books that explore big ideas about mathematics, physics, cognition, and intelligence. Brian Greene’s The Elegant Universe was one of the first nonfiction books that showed me science could be every bit as strange, imaginative, and surprising as fiction. I also continue to enjoy authors such as Douglas Hofstadter, whose work connects mathematics, computation, cognition, and philosophy in ways that have strongly shaped my interests.\nThat interest extends to the work of M. C. Escher. I am particularly drawn to the way his art plays with geometry, recursion, perspective, infinity, and our perception of space, themes that connect naturally with many of the ideas I find interesting in mathematics and computation.\nAnother long-standing interest of mine is urban planning. I am interested in how we can design communities that are more connected, walkable, healthy, and enjoyable places to live. This also overlaps with my professional interests: I am particularly interested in how simulation, agent-based modelling, and other computational approaches can help us understand how planning and policy decisions shape cities and communities over time."
-  },
-  {
-    "objectID": "about.html#elsewhere",
-    "href": "about.html#elsewhere",
-    "title": "About",
-    "section": "Elsewhere",
-    "text": "Elsewhere\nGitHub\nGoogle Scholar\nORCID\nLinkedIn\nEmail"
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "My publications span causal AI, forecasting, and machine learning.\nGoogle Scholar →"
-  },
-  {
-    "objectID": "publications.html#accepted",
-    "href": "publications.html#accepted",
-    "title": "Publications",
-    "section": "Accepted",
-    "text": "Accepted\n\nCausal Story-Guided Agentic Causal Discovery with Small Language Models\nBrandon Mossop and Salimur Choudhury.\nAccepted to the 4th International Conference on Foundation and Large Language Models (FLLM 2026).\nThis work extends agentic causal discovery with explicit causal-story reasoning and evaluates the approach on engineering datasets."
-  },
-  {
-    "objectID": "publications.html#section",
-    "href": "publications.html#section",
-    "title": "Publications",
-    "section": "2026",
-    "text": "2026\n\nRegime-aware causal Bayesian forecasting for non-stationary time series\nBrandon Mossop and Salimur Choudhury.\nPLOS ONE, 21(8), e0356474, 2026.\nA regime-aware forecasting framework that combines temporal causal discovery, Bayesian structural models, predictive regime classification, and posterior predictive uncertainty.\nRead the paper →\nCode →\n\n\nImproving machine learning forecasting explainability and performance with causal feature selection for infectious disease spread\nBrandon Mossop and Salimur Choudhury.\nINFOR: Information Systems and Operational Research, 2026.\nThis work investigates causal feature selection for infectious-disease forecasting, with emphasis on interpretability and predictive performance.\nRead the paper →"
-  },
-  {
-    "objectID": "publications.html#section-1",
-    "href": "publications.html#section-1",
-    "title": "Publications",
-    "section": "2025",
-    "text": "2025\n\nAgent-guided Causal Discovery with a Small Language Model\nBrandon Mossop and Salimur Choudhury.\n2025 3rd International Conference on Foundation and Large Language Models (FLLM), pp. 693–698, 2025.\nAn agent-guided causal discovery framework combining conditional-independence testing, contextual orientation, edge augmentation, and critique with a small language model.\nRead the paper →"
-  },
-  {
-    "objectID": "publications.html#section-2",
-    "href": "publications.html#section-2",
-    "title": "Publications",
-    "section": "2023",
-    "text": "2023\n\nForecasting Hospital Mental-Health Admissions with a Novel Hybrid Deep Learning Architecture\nBrandon Mossop, Ramprasad Bismil, and Quazi Abidur Rahman.\n2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 4093–4100, 2023.\nA deep-learning forecasting approach for hospital mental-health admissions using multivariate time-series data.\nRead the paper →\n\n\nInfectious Disease Forecasting using Multivariate Incomplete Time-series: A Hybrid Architecture with Stacked Dilated Causal Convolutions\nBrandon Mossop and Quazi Abidur Rahman.\n2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 4220–4227, 2023.\nA hybrid deep-learning architecture for forecasting infectious-disease time series with incomplete multivariate observations.\nRead the paper →"
-  },
-  {
-    "objectID": "posts/uncertainty-policy-simulation/index.html",
-    "href": "posts/uncertainty-policy-simulation/index.html",
-    "title": "Why Policy Simulation Needs Uncertainty",
-    "section": "",
-    "text": "Simulation is often presented as if a policy produces a single outcome. Real systems rarely behave that way.\nA policy simulator may contain uncertain behavioral parameters, incomplete causal structure, noisy observations, and stochastic interactions among agents. Reporting one trajectory hides these sources of uncertainty.\nA Bayesian treatment offers a more useful alternative. Instead of calibrating the simulator to one best-fitting parameter vector, we infer a posterior distribution over plausible parameters. We then simulate each proposed intervention across many draws from that posterior.\nThe output is a distribution over policy outcomes.\nThis changes the question from:\n\nWhat does the simulator predict?\n\ninto:\n\nAcross plausible models of the system, how often does this intervention produce the outcome we care about?\n\nFor expensive simulators, repeatedly performing Bayesian inference can itself become the bottleneck. Amortized inference offers a possible solution by learning a reusable mapping from observed simulator behavior to an approximate posterior over latent parameters.\nThe combination of causal structure, agent-based simulation, and amortized Bayesian inference is particularly appealing because each component addresses a different weakness: causal models provide intervention semantics, ABMs capture heterogeneous interaction, and Bayesian inference quantifies uncertainty.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "posts/index.html",
-    "href": "posts/index.html",
-    "title": "Research Notes",
-    "section": "",
-    "text": "These notes are a place to develop research ideas in public, explain technical concepts in accessible language, and document experiments that may later become papers.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Causal Structure Can Be More Robust to Distribution Shift\n\n\n\nCausal AI\n\nMachine Learning\n\nCode\n\nResearch Notes\n\n\n\nA small simulation showing how the underlying causal structure can improve robustness when the data distribution changes.\n\n\n\n\n\nSep 20, 2026\n\n\nBrandon Mossop\n\n\n\n\n\n\n\n\n\n\n\n\nCausal AI Beyond Prediction\n\n\n\nCausal AI\n\nCausal Inference\n\n\n\nWhy useful AI systems increasingly need models of intervention, not only association.\n\n\n\n\n\nSep 18, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nCan Causal Discovery Learn the Rules of an Agent-Based Model?\n\n\n\nAgent-Based Modelling\n\nCausal Discovery\n\nSimulation\n\n\n\nA research direction for learning probabilistic agent behavior from observational data.\n\n\n\n\n\nSep 17, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Policy Simulation Needs Uncertainty\n\n\n\nBayesian Inference\n\nPolicy Simulation\n\nUncertainty\n\n\n\nPolicy simulation should report distributions over outcomes, not only a single simulated future.\n\n\n\n\n\nSep 16, 2026\n\n\n\n\n\nNo matching items\n Back to top"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Building AI systems that learn and reason about causation",
-    "section": "",
-    "text": "I develop causal AI systems that learn structure, model how systems change, and reason about the consequences of interventions under uncertainty. My work brings together causal discovery, forecasting, Bayesian inference, simulation, and agent-based modelling, with a growing focus on causal world models and physical AI.\nExplore my research Read research notes"
-  },
-  {
-    "objectID": "index.html#research-areas",
-    "href": "index.html#research-areas",
-    "title": "Building AI systems that learn and reason about causation",
-    "section": "Research areas",
-    "text": "Research areas\n\n\nCausal Discovery\nLearning causal structure from observational data, statistical tests, and contextual knowledge.\nView research →\n\n\nCausal Forecasting\nUsing causal structure to improve forecasting robustness, interpretability, and intervention reasoning.\nView research →\n\n\nSimulation & Agents\nCombining causal models, Bayesian inference, and agent-based simulation for policy and complex-system analysis.\nView research →"
-  },
-  {
-    "objectID": "index.html#selected-work",
-    "href": "index.html#selected-work",
-    "title": "Building AI systems that learn and reason about causation",
-    "section": "Selected work",
-    "text": "Selected work\n\nRegime-aware causal Bayesian forecasting\nA forecasting framework for non-stationary time series that learns regime-specific temporal causal structure and combines it with Bayesian prediction, uncertainty quantification, and intervention reasoning.\nView research → · Read the paper →\n\n\nCausal feature selection for infectious-disease forecasting\nA causal feature-selection approach for identifying compact, interpretable predictor sets that can improve machine-learning forecasting while reducing reliance on purely associational features.\nView research → · Read the paper →\n\n\nAgentic causal discovery\nMy recent work explores causal discovery systems in which statistical evidence is complemented by small language models and specialized agents for orientation, augmentation, critique, and causal-story reasoning.\nView research → · Read the papers: Agent-guided causal discovery, FLLM 2025 → · Causal story-guided discovery, FLLM 2026 →"
-  },
-  {
-    "objectID": "index.html#current-research-direction",
-    "href": "index.html#current-research-direction",
-    "title": "Building AI systems that learn and reason about causation",
-    "section": "Current research direction",
-    "text": "Current research direction\nMuch of my current work focuses on causal AI, particularly the intersection of causal discovery, forecasting, simulation, and decision-making.\nI am especially interested in how these ideas can contribute to world models and physical AI. Many AI systems can be viewed as learning a policy\n\\[\\begin{equation}\n\\pi_\\theta(a_t \\mid s_t),\n\\end{equation}\\]\nwhich determines what action an agent should take in its current state. World models go a step further by learning how the environment evolves under those actions,\n\\[\\begin{equation}\nT_\\phi(s_{t+1} \\mid s_t, a_t).\n\\end{equation}\\]\nI am particularly interested in giving these learned world models an explicitly causal representation,\n\\[\\begin{equation}\nT_\\phi(s_{t+1} \\mid s_t, \\operatorname{do}(a_t)),\n\\end{equation}\\]\nwhere actions are treated as interventions on the environment. The broader goal is to develop AI systems that can reason about possible consequences before acting, while remaining robust, interpretable, and uncertainty-aware.\nTo see more details (especially if the notation is unfamiliar) learn more about my current research interests."
-  },
-  {
     "objectID": "cv.html",
     "href": "cv.html",
     "title": "CV",
@@ -161,11 +56,53 @@
     "text": "Full CV\nDownload Full CV as PDF"
   },
   {
-    "objectID": "posts/causal-abm/index.html",
-    "href": "posts/causal-abm/index.html",
-    "title": "Can Causal Discovery Learn the Rules of an Agent-Based Model?",
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
     "section": "",
-    "text": "Agent-based models are powerful because they can generate complex system-level behavior from relatively simple rules assigned to individual agents. Their weakness is that those rules are often manually designed.\nA natural alternative is to learn the rules from data.\nSuppose we observe a population of agents over time. For each decision, we record the agent’s state, local environment, recent history, and action. Causal discovery could first be used to identify which variables directly influence the decision. We could then estimate probabilistic structural functions over the discovered parent variables.\nThose functions become stochastic behavioral rules inside the simulator.\nThe resulting model has an interesting property: uncertainty exists at multiple levels. There may be uncertainty about the causal graph, uncertainty about the structural functions, and randomness in individual decisions. Repeated simulation propagates those uncertainties into system-level outcomes.\nThis creates a path toward a data-driven agent-based model that can be judged on two separate criteria:\n\nobservational fidelity: can it reproduce the behavior seen in the data?\ninterventional validity: can it predict what happens when a policy or environmental variable is changed?\n\nThe second criterion is especially important. A simulator that reproduces historical data but fails under intervention is of limited use for decision support.\nThe broader research question is therefore not simply whether causal discovery can fit an ABM. It is whether causal structure can make learned agent behavior more transferable and reliable under interventions.\n\n\n\n Back to top"
+    "text": "My publications span causal AI, forecasting, and machine learning.\nGoogle Scholar →"
+  },
+  {
+    "objectID": "publications.html#accepted",
+    "href": "publications.html#accepted",
+    "title": "Publications",
+    "section": "Accepted",
+    "text": "Accepted\n\nCausal Story-Guided Agentic Causal Discovery with Small Language Models\nBrandon Mossop and Salimur Choudhury.\nAccepted to the 4th International Conference on Foundation and Large Language Models (FLLM 2026).\nThis work extends agentic causal discovery with explicit causal-story reasoning and evaluates the approach on engineering datasets."
+  },
+  {
+    "objectID": "publications.html#section",
+    "href": "publications.html#section",
+    "title": "Publications",
+    "section": "2026",
+    "text": "2026\n\nRegime-aware causal Bayesian forecasting for non-stationary time series\nBrandon Mossop and Salimur Choudhury.\nPLOS ONE, 21(8), e0356474, 2026.\nA regime-aware forecasting framework that combines temporal causal discovery, Bayesian structural models, predictive regime classification, and posterior predictive uncertainty.\nRead the paper →\nCode →\n\n\nImproving machine learning forecasting explainability and performance with causal feature selection for infectious disease spread\nBrandon Mossop and Salimur Choudhury.\nINFOR: Information Systems and Operational Research, 2026.\nThis work investigates causal feature selection for infectious-disease forecasting, with emphasis on interpretability and predictive performance.\nRead the paper →"
+  },
+  {
+    "objectID": "publications.html#section-1",
+    "href": "publications.html#section-1",
+    "title": "Publications",
+    "section": "2025",
+    "text": "2025\n\nAgent-guided Causal Discovery with a Small Language Model\nBrandon Mossop and Salimur Choudhury.\n2025 3rd International Conference on Foundation and Large Language Models (FLLM), pp. 693–698, 2025.\nAn agent-guided causal discovery framework combining conditional-independence testing, contextual orientation, edge augmentation, and critique with a small language model.\nRead the paper →"
+  },
+  {
+    "objectID": "publications.html#section-2",
+    "href": "publications.html#section-2",
+    "title": "Publications",
+    "section": "2023",
+    "text": "2023\n\nForecasting Hospital Mental-Health Admissions with a Novel Hybrid Deep Learning Architecture\nBrandon Mossop, Ramprasad Bismil, and Quazi Abidur Rahman.\n2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 4093–4100, 2023.\nA deep-learning forecasting approach for hospital mental-health admissions using multivariate time-series data.\nRead the paper →\n\n\nInfectious Disease Forecasting using Multivariate Incomplete Time-series: A Hybrid Architecture with Stacked Dilated Causal Convolutions\nBrandon Mossop and Quazi Abidur Rahman.\n2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pp. 4220–4227, 2023.\nA hybrid deep-learning architecture for forecasting infectious-disease time series with incomplete multivariate observations.\nRead the paper →"
+  },
+  {
+    "objectID": "posts/uncertainty-policy-simulation/index.html",
+    "href": "posts/uncertainty-policy-simulation/index.html",
+    "title": "Why Policy Simulation Needs Uncertainty",
+    "section": "",
+    "text": "Simulation is often presented as if a policy produces a single outcome. Real systems rarely behave that way.\nA policy simulator may contain uncertain behavioral parameters, incomplete causal structure, noisy observations, and stochastic interactions among agents. Reporting one trajectory hides these sources of uncertainty.\nA Bayesian treatment offers a more useful alternative. Instead of calibrating the simulator to one best-fitting parameter vector, we infer a posterior distribution over plausible parameters. We then simulate each proposed intervention across many draws from that posterior.\nThe output is a distribution over policy outcomes.\nThis changes the question from:\n\nWhat does the simulator predict?\n\ninto:\n\nAcross plausible models of the system, how often does this intervention produce the outcome we care about?\n\nFor expensive simulators, repeatedly performing Bayesian inference can itself become the bottleneck. Amortized inference offers a possible solution by learning a reusable mapping from observed simulator behavior to an approximate posterior over latent parameters.\nThe combination of causal structure, agent-based simulation, and amortized Bayesian inference is particularly appealing because each component addresses a different weakness: causal models provide intervention semantics, ABMs capture heterogeneous interaction, and Bayesian inference quantifies uncertainty.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Research Notes",
+    "section": "",
+    "text": "These notes are a place to develop research ideas in public, explain technical concepts in accessible language, and document experiments that may later become papers.\n\n\n\n\n\n\n\n\n  \n\n\n\n\nWhy Causal Structure Can Be More Robust to Distribution Shift\n\n\n\n\n\n\n\nCausal AI\n\n\nMachine Learning\n\n\nCode\n\n\nResearch Notes\n\n\n\n\nA small simulation showing how the underlying causal structure can improve robustness when the data distribution changes.\n\n\n\n\n\n\nSep 20, 2026\n\n\nBrandon Mossop\n\n\n\n\n\n\n  \n\n\n\n\nCausal AI Beyond Prediction\n\n\n\n\n\n\n\nCausal AI\n\n\nCausal Inference\n\n\n\n\nWhy useful AI systems increasingly need models of intervention, not only association.\n\n\n\n\n\n\nSep 18, 2026\n\n\n\n\n\n\n  \n\n\n\n\nCan Causal Discovery Learn the Rules of an Agent-Based Model?\n\n\n\n\n\n\n\nAgent-Based Modelling\n\n\nCausal Discovery\n\n\nSimulation\n\n\n\n\nA research direction for learning probabilistic agent behavior from observational data.\n\n\n\n\n\n\nSep 17, 2026\n\n\n\n\n\n\n  \n\n\n\n\nWhy Policy Simulation Needs Uncertainty\n\n\n\n\n\n\n\nBayesian Inference\n\n\nPolicy Simulation\n\n\nUncertainty\n\n\n\n\nPolicy simulation should report distributions over outcomes, not only a single simulated future.\n\n\n\n\n\n\nSep 16, 2026\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "posts/causal-ai-beyond-prediction/index.html",
@@ -173,6 +110,55 @@
     "title": "Causal AI Beyond Prediction",
     "section": "",
     "text": "Prediction asks what is likely to happen next. Causal reasoning asks a different question: what would happen if we changed something?\nThat distinction matters whenever an AI system is used to support decisions. A model might learn that a variable is highly predictive of an outcome while remaining unable to determine whether changing that variable would alter the outcome. In many scientific, engineering, and policy settings, the second question is the one we actually care about.\nMy research is motivated by the idea that causal structure can act as an explicit model of mechanism. A directed acyclic graph provides a compact representation of which variables directly influence others. Structural functions then describe how those influences produce outcomes.\nThe challenge is that these structures are rarely known. They must be learned from data, supplied by experts, or inferred through a combination of statistical and contextual evidence. This makes causal discovery a critical component of causal AI.\nA useful causal AI system should therefore do more than recover a graph. It should represent uncertainty about that graph, connect the graph to predictive models, and support reasoning under intervention and distribution shift.\nThis is the direction I am exploring across causal discovery, forecasting, Bayesian inference, and simulation.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "My research focuses on building AI systems that explicitly represent causal structure and uncertainty. I am particularly interested in settings where predictive accuracy alone is not enough because the central question is not only what is likely to happen, but why it happens, what will happen after an intervention, and how predictions should change when the underlying system changes.\nThis motivates my work across causal discovery, forecasting, Bayesian inference, simulation, and agent-based modelling."
+  },
+  {
+    "objectID": "research.html#causal-discovery",
+    "href": "research.html#causal-discovery",
+    "title": "Research",
+    "section": "Causal Discovery",
+    "text": "Causal Discovery\nCausal discovery aims to recover plausible causal structure from observational data. Rather than treating relationships between variables as purely statistical associations, causal discovery seeks to identify which variables may directly influence others.\nMy work explores how statistical discovery can be strengthened with temporal structure, contextual knowledge, and language-model reasoning, while keeping statistical evidence central to the discovery process.\n\nAgentic causal discovery\nI investigate multi-agent workflows in which specialized agents contribute different forms of reasoning to causal discovery. These agents can propose orientations, identify potentially missing relationships, and critique candidate causal graphs.\nThe goal is not to replace statistical causal discovery with language models. Instead, I am interested in whether contextual reasoning can complement conditional-independence evidence, particularly when finite samples, weak statistical signals, or domain-specific relationships make causal structure difficult to identify from data alone.\nKey themes:\n\nexpert-in-the-loop causal orientation\nsmall language models for contextual reasoning\nmulti-agent critique and edge augmentation\ncausal story reasoning\nstructural evaluation using F1 and structural Hamming distance"
+  },
+  {
+    "objectID": "research.html#causal-forecasting",
+    "href": "research.html#causal-forecasting",
+    "title": "Research",
+    "section": "Causal Forecasting",
+    "text": "Causal Forecasting\nForecasting models are typically optimized to predict future observations, while the mechanisms producing those observations remain implicit.\nMy work investigates whether explicitly learning causal structure can make forecasting models more interpretable, robust to changing conditions, and useful for reasoning about interventions.\n\nRegime-Aware Causal Bayesian Forecasting for Non-Stationary Time Series\nCaReBayes (Causal Regime Bayesian) is a forecasting framework for systems whose underlying relationships can change over time.\nRather than assuming that a single model describes the entire data-generating process, CaReBayes represents a non-stationary system as a collection of regimes with different temporal causal structures. A causal graph is estimated for each regime, Bayesian structural models are fit over the discovered parent sets, and new observations are assigned to regimes according to their predictive compatibility.\nThe broader idea is that distribution shift can sometimes reflect a change in mechanism, rather than simply a change in model coefficients. By explicitly representing those mechanisms, the model can adapt its forecasts while also providing uncertainty estimates and a structural explanation for why its predictions change.\n\n\nCausal feature selection for forecasting\nAnother line of my work studies whether causal discovery can identify compact and meaningful predictor sets for forecasting.\nInstead of selecting predictors solely according to correlation or predictive contribution, causal feature selection attempts to identify variables that have a more direct relationship with the forecasting target. I have explored this idea in infectious-disease forecasting, where causal feature selection can improve interpretability while maintaining or improving predictive performance.\nMore broadly, I am interested in whether causal feature selection can improve robustness when the relationships between non-causal predictors and the target change over time."
+  },
+  {
+    "objectID": "research.html#causal-simulation-and-agent-based-models",
+    "href": "research.html#causal-simulation-and-agent-based-models",
+    "title": "Research",
+    "section": "Causal Simulation and Agent-Based Models",
+    "text": "Causal Simulation and Agent-Based Models\nI am increasingly interested in using causal models as the structural layer inside simulation systems.\nAgent-based models are powerful because they can represent heterogeneous individuals, local interactions, and emergent system behaviour. However, the behavioural rules governing agents are often specified manually. This creates an opportunity to combine causal discovery with simulation so that some of those behavioural mechanisms can instead be learned from data.\n\nLearning probabilistic agent behavior through causal discovery\nThis project explores whether observational data can be used to learn behavioural rules for agents.\nThe proposed framework would use causal discovery to identify the variables that directly influence an agent’s decisions, estimate probabilistic structural functions over those relationships, and then use those learned mechanisms as stochastic decision rules inside an agent-based model.\nThe resulting simulator could be evaluated at two levels:\n\nwhether it reproduces observed individual and system-level behaviour, and\nwhether it correctly predicts how the system responds to interventions.\n\nThis is important because reproducing observed data is not necessarily sufficient for a useful policy simulator. A model intended for intervention analysis should also represent how behaviour changes when the environment itself is changed.\n\n\nAmortized Bayesian policy simulation\nA related direction explores the use of amortized Bayesian inference for repeated simulation and policy analysis.\nBayesian calibration can provide uncertainty over simulator parameters, but conventional inference may be computationally expensive when it must be repeated for many policy scenarios. Amortized inference instead learns an inference procedure that can be reused across related datasets and simulation conditions.\nI am interested in whether this can make uncertainty-aware policy simulation practical at scale, allowing posterior beliefs about latent mechanisms to be updated rapidly as new observations or interventions are considered."
+  },
+  {
+    "objectID": "research.html#current-research-direction",
+    "href": "research.html#current-research-direction",
+    "title": "Research",
+    "section": "Towards causal world models",
+    "text": "Towards causal world models\nMy broader research direction is to develop causal AI systems that can learn how environments change, reason about interventions, and represent uncertainty about their consequences.\nI am particularly interested in bringing ideas from causal discovery, Bayesian inference, forecasting, and simulation into world models and physical AI.\nMany AI systems can be viewed as learning a policy\n\\[\\begin{equation}\n\\pi_\\theta(a_t \\mid s_t),\n\\end{equation}\\]\nwhere \\(\\pi_\\theta\\) is a policy parameterized by \\(\\theta\\), \\(s_t\\) represents the agent’s current state, and \\(a_t\\) is the action it selects. In other words, the policy determines what action an agent should take in its current state.\nWorld models go a step further by learning how the environment evolves under those actions,\n\\[\\begin{equation}\nT_\\phi(s_{t+1} \\mid s_t, a_t),\n\\end{equation}\\]\nwhere \\(T_\\phi\\) is a learned transition or world model parameterized by \\(\\phi\\), and \\(s_{t+1}\\) represents the next state of the environment.\nI am particularly interested in giving these learned world models an explicitly causal interpretation,\n\\[\\begin{equation}\nT_\\phi(s_{t+1} \\mid s_t, \\operatorname{do}(a_t)),\n\\end{equation}\\]\nwhere \\(\\operatorname{do}(a_t)\\) indicates that the action is treated as an intervention on the environment rather than simply as something that was observed.\nIn controlled environments, the predictive and interventional formulations may coincide. The distinction becomes more important when models are learned from observational data, when hidden confounding is possible, or when an agent must reason about the effects of actions outside its previous experience.\nMy long-term interest is in whether causal world models can help AI systems reason about possible consequences before acting, while remaining robust, interpretable, and uncertainty-aware."
+  },
+  {
+    "objectID": "research.html#research-philosophy",
+    "href": "research.html#research-philosophy",
+    "title": "Research",
+    "section": "Research philosophy",
+    "text": "Research philosophy\nAcross these projects, I am most interested in methods that satisfy three properties at once:\n\nMechanistic enough to support intervention. A model should represent enough of the underlying structure of a system to reason about what may happen when that system is changed.\nProbabilistic enough to represent uncertainty. Predictions and intervention estimates should reflect uncertainty in the data, learned mechanisms, latent parameters, and future outcomes.\nPractical enough to evaluate on real systems. Causal models should ultimately be testable using realistic datasets, simulation environments, and decision-making problems.\n\nThe broader goal of my research is to move from AI systems that primarily recognize patterns toward systems that can reason about mechanisms, interventions, uncertainty, and the consequences of actions."
+  },
+  {
+    "objectID": "posts/causal-abm/index.html",
+    "href": "posts/causal-abm/index.html",
+    "title": "Can Causal Discovery Learn the Rules of an Agent-Based Model?",
+    "section": "",
+    "text": "Agent-based models are powerful because they can generate complex system-level behavior from relatively simple rules assigned to individual agents. Their weakness is that those rules are often manually designed.\nA natural alternative is to learn the rules from data.\nSuppose we observe a population of agents over time. For each decision, we record the agent’s state, local environment, recent history, and action. Causal discovery could first be used to identify which variables directly influence the decision. We could then estimate probabilistic structural functions over the discovered parent variables.\nThose functions become stochastic behavioral rules inside the simulator.\nThe resulting model has an interesting property: uncertainty exists at multiple levels. There may be uncertainty about the causal graph, uncertainty about the structural functions, and randomness in individual decisions. Repeated simulation propagates those uncertainties into system-level outcomes.\nThis creates a path toward a data-driven agent-based model that can be judged on two separate criteria:\n\nobservational fidelity: can it reproduce the behavior seen in the data?\ninterventional validity: can it predict what happens when a policy or environmental variable is changed?\n\nThe second criterion is especially important. A simulator that reproduces historical data but fails under intervention is of limited use for decision support.\nThe broader research question is therefore not simply whether causal discovery can fit an ABM. It is whether causal structure can make learned agent behavior more transferable and reliable under interventions.\n\n\n\n Back to top"
   },
   {
     "objectID": "posts/distribution-shifts/index.html",
@@ -245,45 +231,59 @@
     "text": "Takeaway\nThis small experiment shows why causal structure can matter even when the final objective is prediction.\nA model using all available information can perform better when the deployment environment closely resembles the training environment. But part of that advantage may come from exploiting associations that are fragile under environmental change.\nA model using direct causes may sacrifice some initial predictive accuracy while remaining more stable when non-causal predictors shift.\nThis is one motivation for combining causal discovery with machine learning: not simply to improve prediction on familiar data, but to identify relationships that may remain meaningful when the environment changes."
   },
   {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Building AI systems that learn and reason about causation",
     "section": "",
-    "text": "My research focuses on building AI systems that explicitly represent causal structure and uncertainty. I am particularly interested in settings where predictive accuracy alone is not enough because the central question is not only what is likely to happen, but why it happens, what will happen after an intervention, and how predictions should change when the underlying system changes.\nThis motivates my work across causal discovery, forecasting, Bayesian inference, simulation, and agent-based modelling."
+    "text": "I develop causal AI systems that learn structure, model how systems change, and reason about the consequences of interventions under uncertainty. My work brings together causal discovery, forecasting, Bayesian inference, simulation, and agent-based modelling, with a growing focus on causal world models and physical AI.\nExplore my research Read research notes"
   },
   {
-    "objectID": "research.html#causal-discovery",
-    "href": "research.html#causal-discovery",
-    "title": "Research",
-    "section": "Causal Discovery",
-    "text": "Causal Discovery\nCausal discovery aims to recover plausible causal structure from observational data. Rather than treating relationships between variables as purely statistical associations, causal discovery seeks to identify which variables may directly influence others.\nMy work explores how statistical discovery can be strengthened with temporal structure, contextual knowledge, and language-model reasoning, while keeping statistical evidence central to the discovery process.\n\nAgentic causal discovery\nI investigate multi-agent workflows in which specialized agents contribute different forms of reasoning to causal discovery. These agents can propose orientations, identify potentially missing relationships, and critique candidate causal graphs.\nThe goal is not to replace statistical causal discovery with language models. Instead, I am interested in whether contextual reasoning can complement conditional-independence evidence, particularly when finite samples, weak statistical signals, or domain-specific relationships make causal structure difficult to identify from data alone.\nKey themes:\n\nexpert-in-the-loop causal orientation\nsmall language models for contextual reasoning\nmulti-agent critique and edge augmentation\ncausal story reasoning\nstructural evaluation using F1 and structural Hamming distance"
+    "objectID": "index.html#research-areas",
+    "href": "index.html#research-areas",
+    "title": "Building AI systems that learn and reason about causation",
+    "section": "Research areas",
+    "text": "Research areas\n\n\nCausal Discovery\nLearning causal structure from observational data, statistical tests, and contextual knowledge.\nView research →\n\n\nCausal Forecasting\nUsing causal structure to improve forecasting robustness, interpretability, and intervention reasoning.\nView research →\n\n\nSimulation & Agents\nCombining causal models, Bayesian inference, and agent-based simulation for policy and complex-system analysis.\nView research →"
   },
   {
-    "objectID": "research.html#causal-forecasting",
-    "href": "research.html#causal-forecasting",
-    "title": "Research",
-    "section": "Causal Forecasting",
-    "text": "Causal Forecasting\nForecasting models are typically optimized to predict future observations, while the mechanisms producing those observations remain implicit.\nMy work investigates whether explicitly learning causal structure can make forecasting models more interpretable, robust to changing conditions, and useful for reasoning about interventions.\n\nRegime-Aware Causal Bayesian Forecasting for Non-Stationary Time Series\nCaReBayes (Causal Regime Bayesian) is a forecasting framework for systems whose underlying relationships can change over time.\nRather than assuming that a single model describes the entire data-generating process, CaReBayes represents a non-stationary system as a collection of regimes with different temporal causal structures. A causal graph is estimated for each regime, Bayesian structural models are fit over the discovered parent sets, and new observations are assigned to regimes according to their predictive compatibility.\nThe broader idea is that distribution shift can sometimes reflect a change in mechanism, rather than simply a change in model coefficients. By explicitly representing those mechanisms, the model can adapt its forecasts while also providing uncertainty estimates and a structural explanation for why its predictions change.\n\n\nCausal feature selection for forecasting\nAnother line of my work studies whether causal discovery can identify compact and meaningful predictor sets for forecasting.\nInstead of selecting predictors solely according to correlation or predictive contribution, causal feature selection attempts to identify variables that have a more direct relationship with the forecasting target. I have explored this idea in infectious-disease forecasting, where causal feature selection can improve interpretability while maintaining or improving predictive performance.\nMore broadly, I am interested in whether causal feature selection can improve robustness when the relationships between non-causal predictors and the target change over time."
+    "objectID": "index.html#selected-work",
+    "href": "index.html#selected-work",
+    "title": "Building AI systems that learn and reason about causation",
+    "section": "Selected work",
+    "text": "Selected work\n\nRegime-aware causal Bayesian forecasting\nA forecasting framework for non-stationary time series that learns regime-specific temporal causal structure and combines it with Bayesian prediction, uncertainty quantification, and intervention reasoning.\nView research → · Read the paper →\n\n\nCausal feature selection for infectious-disease forecasting\nA causal feature-selection approach for identifying compact, interpretable predictor sets that can improve machine-learning forecasting while reducing reliance on purely associational features.\nView research → · Read the paper →\n\n\nAgentic causal discovery\nMy recent work explores causal discovery systems in which statistical evidence is complemented by small language models and specialized agents for orientation, augmentation, critique, and causal-story reasoning.\nView research → · Read the papers: Agent-guided causal discovery, FLLM 2025 → · Causal story-guided discovery, FLLM 2026 →"
   },
   {
-    "objectID": "research.html#causal-simulation-and-agent-based-models",
-    "href": "research.html#causal-simulation-and-agent-based-models",
-    "title": "Research",
-    "section": "Causal Simulation and Agent-Based Models",
-    "text": "Causal Simulation and Agent-Based Models\nI am increasingly interested in using causal models as the structural layer inside simulation systems.\nAgent-based models are powerful because they can represent heterogeneous individuals, local interactions, and emergent system behaviour. However, the behavioural rules governing agents are often specified manually. This creates an opportunity to combine causal discovery with simulation so that some of those behavioural mechanisms can instead be learned from data.\n\nLearning probabilistic agent behavior through causal discovery\nThis project explores whether observational data can be used to learn behavioural rules for agents.\nThe proposed framework would use causal discovery to identify the variables that directly influence an agent’s decisions, estimate probabilistic structural functions over those relationships, and then use those learned mechanisms as stochastic decision rules inside an agent-based model.\nThe resulting simulator could be evaluated at two levels:\n\nwhether it reproduces observed individual and system-level behaviour, and\nwhether it correctly predicts how the system responds to interventions.\n\nThis is important because reproducing observed data is not necessarily sufficient for a useful policy simulator. A model intended for intervention analysis should also represent how behaviour changes when the environment itself is changed.\n\n\nAmortized Bayesian policy simulation\nA related direction explores the use of amortized Bayesian inference for repeated simulation and policy analysis.\nBayesian calibration can provide uncertainty over simulator parameters, but conventional inference may be computationally expensive when it must be repeated for many policy scenarios. Amortized inference instead learns an inference procedure that can be reused across related datasets and simulation conditions.\nI am interested in whether this can make uncertainty-aware policy simulation practical at scale, allowing posterior beliefs about latent mechanisms to be updated rapidly as new observations or interventions are considered."
+    "objectID": "index.html#current-research-direction",
+    "href": "index.html#current-research-direction",
+    "title": "Building AI systems that learn and reason about causation",
+    "section": "Current research direction",
+    "text": "Current research direction\nMuch of my current work focuses on causal AI, particularly the intersection of causal discovery, forecasting, simulation, and decision-making.\nI am especially interested in how these ideas can contribute to world models and physical AI. Many AI systems can be viewed as learning a policy\n\\[\\begin{equation}\n\\pi_\\theta(a_t \\mid s_t),\n\\end{equation}\\]\nwhich determines what action an agent should take in its current state. World models go a step further by learning how the environment evolves under those actions,\n\\[\\begin{equation}\nT_\\phi(s_{t+1} \\mid s_t, a_t).\n\\end{equation}\\]\nI am particularly interested in giving these learned world models an explicitly causal representation,\n\\[\\begin{equation}\nT_\\phi(s_{t+1} \\mid s_t, \\operatorname{do}(a_t)),\n\\end{equation}\\]\nwhere actions are treated as interventions on the environment. The broader goal is to develop AI systems that can reason about possible consequences before acting, while remaining robust, interpretable, and uncertainty-aware.\nTo see more details (especially if the notation is unfamiliar) learn more about my current research interests."
   },
   {
-    "objectID": "research.html#current-research-direction",
-    "href": "research.html#current-research-direction",
-    "title": "Research",
-    "section": "Towards causal world models",
-    "text": "Towards causal world models\nMy broader research direction is to develop causal AI systems that can learn how environments change, reason about interventions, and represent uncertainty about their consequences.\nI am particularly interested in bringing ideas from causal discovery, Bayesian inference, forecasting, and simulation into world models and physical AI.\nMany AI systems can be viewed as learning a policy\n\\[\\begin{equation}\n\\pi_\\theta(a_t \\mid s_t),\n\\end{equation}\\]\nwhere \\(\\pi_\\theta\\) is a policy parameterized by \\(\\theta\\), \\(s_t\\) represents the agent’s current state, and \\(a_t\\) is the action it selects. In other words, the policy determines what action an agent should take in its current state.\nWorld models go a step further by learning how the environment evolves under those actions,\n\\[\\begin{equation}\nT_\\phi(s_{t+1} \\mid s_t, a_t),\n\\end{equation}\\]\nwhere \\(T_\\phi\\) is a learned transition or world model parameterized by \\(\\phi\\), and \\(s_{t+1}\\) represents the next state of the environment.\nI am particularly interested in giving these learned world models an explicitly causal interpretation,\n\\[\\begin{equation}\nT_\\phi(s_{t+1} \\mid s_t, \\operatorname{do}(a_t)),\n\\end{equation}\\]\nwhere \\(\\operatorname{do}(a_t)\\) indicates that the action is treated as an intervention on the environment rather than simply as something that was observed.\nIn controlled environments, the predictive and interventional formulations may coincide. The distinction becomes more important when models are learned from observational data, when hidden confounding is possible, or when an agent must reason about the effects of actions outside its previous experience.\nMy long-term interest is in whether causal world models can help AI systems reason about possible consequences before acting, while remaining robust, interpretable, and uncertainty-aware."
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am a Ph.D. Candidate in Computing at Queen’s University and a researcher in the GOAL Lab, working at the intersection of causal inference, machine learning, Bayesian modelling, and simulation.\nMy research focuses on how causal structure can be learned from data and used to build artificial intelligence systems that are more robust, interpretable, and capable of reasoning about interventions. A recurring question across my work is how we can move beyond predicting what is likely to happen toward understanding why it happens and what may happen if we actively change the system.\nThis motivates my work on causal discovery, causal forecasting, intervention reasoning, uncertainty quantification, and agent-based modelling, with a broader interest in developing AI systems that can reason about the consequences of actions rather than only recognize statistical patterns."
   },
   {
-    "objectID": "research.html#research-philosophy",
-    "href": "research.html#research-philosophy",
-    "title": "Research",
-    "section": "Research philosophy",
-    "text": "Research philosophy\nAcross these projects, I am most interested in methods that satisfy three properties at once:\n\nMechanistic enough to support intervention. A model should represent enough of the underlying structure of a system to reason about what may happen when that system is changed.\nProbabilistic enough to represent uncertainty. Predictions and intervention estimates should reflect uncertainty in the data, learned mechanisms, latent parameters, and future outcomes.\nPractical enough to evaluate on real systems. Causal models should ultimately be testable using realistic datasets, simulation environments, and decision-making problems.\n\nThe broader goal of my research is to move from AI systems that primarily recognize patterns toward systems that can reason about mechanisms, interventions, uncertainty, and the consequences of actions."
+    "objectID": "about.html#my-academic-path",
+    "href": "about.html#my-academic-path",
+    "title": "About",
+    "section": "My academic path",
+    "text": "My academic path\nMy academic path began in Civil Engineering at Lakehead University. After graduating, I spent about four years working in the oil and gas sector in Alberta. During that time, however, I became increasingly interested in computer programming and artificial intelligence.\nA major turning point came when I read Douglas Hofstadter’s Gödel, Escher, Bach. Like many researchers who have been drawn to artificial intelligence by the book, I found its exploration of intelligence, computation, self-reference, and the nature of thought fascinating. It left me wanting to understand these ideas more deeply and ultimately convinced me to pursue computer science.\nI returned to Lakehead University to study Computer Science, and then continued into a master’s degree specializing in Artificial Intelligence. During that period, my interests gradually shifted from conventional machine learning toward questions about how AI systems can reason about the underlying mechanisms that generate data rather than simply learn statistical patterns from it.\nAnother book played an important role in that transition: Judea Pearl and Dana Mackenzie’s The Book of Why. Its treatment of causality, intervention, and counterfactual reasoning had a similar impact on me to Gödel, Escher, Bach. It introduced me to the idea that there is a fundamental difference between observing that two things are associated and understanding what would happen if we actively changed one of them.\nThat interest eventually led me to my current doctoral research in Computing at Queen’s University, where I study causal structure learning and its use in building more robust, explainable, and intervention-aware artificial intelligence systems."
+  },
+  {
+    "objectID": "about.html#beyond-research",
+    "href": "about.html#beyond-research",
+    "title": "About",
+    "section": "Beyond research",
+    "text": "Beyond research\nOutside of research, I am an enthusiastic sports fan and enjoy both watching and playing. I follow Liverpool FC and the Miami Dolphins, and I particularly enjoy playing soccer and tennis, as well as running.\nI am also an avid reader, especially of popular science and books that explore big ideas about mathematics, physics, cognition, and intelligence. Brian Greene’s The Elegant Universe was one of the first nonfiction books that showed me science could be every bit as strange, imaginative, and surprising as fiction. I also continue to enjoy authors such as Douglas Hofstadter, whose work connects mathematics, computation, cognition, and philosophy in ways that have strongly shaped my interests.\nThat interest extends to the work of M. C. Escher. I am particularly drawn to the way his art plays with geometry, recursion, perspective, infinity, and our perception of space, themes that connect naturally with many of the ideas I find interesting in mathematics and computation.\nAnother long-standing interest of mine is urban planning. I am interested in how we can design communities that are more connected, walkable, healthy, and enjoyable places to live. This also overlaps with my professional interests: I am particularly interested in how simulation, agent-based modelling, and other computational approaches can help us understand how planning and policy decisions shape cities and communities over time."
+  },
+  {
+    "objectID": "about.html#elsewhere",
+    "href": "about.html#elsewhere",
+    "title": "About",
+    "section": "Elsewhere",
+    "text": "Elsewhere\nGitHub\nGoogle Scholar\nORCID\nLinkedIn\nEmail"
   }
 ]
