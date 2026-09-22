@@ -1,11 +1,21 @@
 :root {
   --ink: #172033;
   --muted: #667085;
-  --line: #e4e7ec;
-  --accent: #3156d3;
-  --accent-soft: #eef2ff;
+  --line: #dfe5df;
+
+  --evergreen: #2f5d3a;
+  --evergreen-dark: #24492d;
+  --evergreen-soft: #f1f6f2;
+
+  --trunk: #7a5a3a;
+  --trunk-dark: #5f452d;
+  --trunk-soft: #f7f3ee;
+
   --paper: #ffffff;
-  --soft: #f8fafc;
+  --soft: #f8faf8;
+
+  --accent: var(--evergreen);
+  --accent-soft: var(--evergreen-soft);
 }
 
 body {
@@ -65,29 +75,29 @@ body {
    Research cards
    ------------------------- */
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin: 1.5rem 0 3rem;
-}
-
 .research-card {
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   padding: 1.5rem;
   background: var(--paper);
-  box-shadow: 0 6px 24px rgba(16, 24, 40, .04);
-  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 4px 16px rgba(16, 24, 40, .04);
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease,
+    background-color .15s ease,
+    border-color .15s ease;
 }
 
 .research-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(16, 24, 40, .08);
+  background: var(--evergreen-soft);
+  border-color: #c9d8cc;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, .07);
 }
 
 .research-card h3 {
   margin-top: 0;
+  color: var(--evergreen-dark);
 }
 
 /* -------------------------
@@ -105,11 +115,19 @@ h3 {
 }
 
 h2 {
-  margin-top: 2.6rem;
+  margin-top: 3rem;
+  padding-bottom: .4rem;
+  border-bottom: 2px solid var(--evergreen);
+  width: fit-content;
 }
 
 a {
+  color: var(--evergreen);
   text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--evergreen-dark);
 }
 
 .btn-primary {
@@ -159,3 +177,30 @@ blockquote {
     letter-spacing: .12em;
   }
 }
+
+/* Homepage hero buttons */
+
+.hero .btn-primary {
+  background-color: var(--evergreen);
+  border-color: var(--evergreen);
+  color: #ffffff;
+}
+
+.hero .btn-primary:hover {
+  background-color: var(--evergreen-dark);
+  border-color: var(--evergreen-dark);
+  color: #ffffff;
+}
+
+.hero .btn-outline-secondary {
+  background-color: transparent;
+  border-color: var(--trunk);
+  color: var(--trunk);
+}
+
+.hero .btn-outline-secondary:hover {
+  background-color: var(--trunk);
+  border-color: var(--trunk);
+  color: #ffffff;
+}
+
