@@ -8,7 +8,7 @@ website:
   title: "Brandon Mossop"
   site-url: "https://brandonmossop.com"
   description: "Research in causal AI, Bayesian inference, causal discovery, forecasting, and agent-based simulation."
-  favicon: assets/causal-graph-icon.png
+  favicon: assets/favicon.svg
   navbar:
     background: dark
     left:
