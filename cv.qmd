@@ -3,7 +3,7 @@ title: "CV"
 toc: false
 ---
 
-A concise web-based version of my academic CV is below. 
+A concise web-based version of my CV is below. 
 
 ## Profile summary
 

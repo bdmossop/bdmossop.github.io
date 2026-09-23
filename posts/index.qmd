@@ -1,6 +1,6 @@
 ---
 title: "Research Notes"
-description: "Short notes on causal AI, simulation, uncertainty, and emerging research ideas."
+description: "Notes on my work and other AI related topics. A place for explaining technical concepts in accessible language (sort of a personal blog)"
 listing:
   contents: "**/index.qmd"
   sort: "date desc"
@@ -10,4 +10,4 @@ listing:
 page-layout: full
 ---
 
-These notes are a place to develop research ideas in public, explain technical concepts in accessible language, and document experiments that may later become papers.
+

@@ -5,7 +5,7 @@ description: "Publications and research outputs."
 
 My publications span causal AI, forecasting, and machine learning.
 
-[Google Scholar →](https://scholar.google.com/citations?user=MAJ99A8AAAAJ&hl=en&oi=ao){.btn .btn-outline-primary target="_blank"}
+[Google Scholar →](https://scholar.google.com/citations?user=MAJ99A8AAAAJ&hl=en&oi=ao){.btn .btn-primary target="_blank"}
 
 ## Accepted
 
