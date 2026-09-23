@@ -1,6 +1,6 @@
 ---
 title: "Research Notes"
-description: "Notes on my work and other AI related topics. A place for explaining technical concepts in accessible language (sort of a personal blog)"
+description: "Notes on my work and other AI related topics in accessible language (sort of a personal blog)"
 listing:
   contents: "**/index.qmd"
   sort: "date desc"

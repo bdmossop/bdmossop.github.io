@@ -183,9 +183,9 @@ blockquote {
 /* Homepage hero buttons */
 
 .hero .btn-primary {
-  background-color: var(--evergreen);
+  background-color: transparent;
   border-color: var(--evergreen);
-  color: #ffffff;
+  color: var(--trunk);
 }
 
 .hero .btn-primary:hover {
