@@ -103,5 +103,5 @@ Delivered an undergraduate guest lecture on **time series forecasting**.
 
 ## Full CV 
 
-[Download Full CV as PDF](assets/Brandon_Mossop_CV.pdf){.btn .btn-primary}
+[Download Full CV as PDF](assets/Brandon_Mossop_CV.pdf){.btn .btn-primary target="_blank"}
 
