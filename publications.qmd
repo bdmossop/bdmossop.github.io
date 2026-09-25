@@ -1,6 +1,6 @@
 ---
 title: "Publications"
-description: "Publications and research outputs."
+description: "Peer-reviewed Publications"
 ---
 
 My publications span causal AI, forecasting, and machine learning.
